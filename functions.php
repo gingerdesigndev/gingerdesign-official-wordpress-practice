@@ -1,13 +1,31 @@
 <?php
-/**
- * Functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
+
+function get_default_image() {
+    $num = rand(1,3);
+    return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
+}
+
+function get_first_tag($postID) {
+    $tags = get_the_tags($postID);
+    $firstTagName = '大陰百科';
+    if ($tags[0]->name) $firstTagName = $tags[0]->name;
+    return $firstTagName;
+}
+
+function get_feature_image($postID) {
+    $img = get_default_image();
+    $images = wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'single-post-thumbnail' );
+    if ($images[0]) $img = $images[0];
+    return $img;
+}
+
+
+
+
+
+
+
+
 
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
