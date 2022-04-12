@@ -29,13 +29,14 @@
 	margin-bottom: 48px
 	h2
 		color: $main
-		p
-			font-size: 36px
-			font-weight: 700
-			margin: 0
+		font-size: 36px
+		font-weight: 700
+		margin: 0
 		span
 			font-size: 24px
 			font-weight: 500
+			display: block
+			margin-top: .5rem
 	a
 		position: absolute
 		right: 0
@@ -50,5 +51,10 @@
 .max-three-lines
 	display: -webkit-box
 	-webkit-line-clamp: 3
+	-webkit-box-orient: vertical
+	overflow: hidden
+.max-eight-lines
+	display: -webkit-box
+	-webkit-line-clamp: 8
 	-webkit-box-orient: vertical
 	overflow: hidden

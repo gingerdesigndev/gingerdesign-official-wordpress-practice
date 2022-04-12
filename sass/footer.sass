@@ -1,0 +1,62 @@
+.footer-main
+	background-color: $light
+	text-align: center
+	padding: 50px 0
+	letter-spacing: 0
+	a
+		text-decoration: none
+	.footer-logo
+		width: 80px
+		display: inline-block
+		margin-bottom: 20px
+	h2
+		font-size: 24px
+		font-weight: normal
+		margin: 0 0 .25rem
+	h3
+		font-size: 20px
+		font-weight: normal
+		&::after
+			content: ""
+			display: block
+			width: 100px
+			height: 1px
+			background-color: $gray
+			margin: 2rem auto
+	.list-social
+		display: flex
+		justify-content: center
+		list-style: none
+		padding: 0
+		margin: 0 0 2rem
+		li
+			margin: 0 .5rem
+			a
+				img
+					height: 32px
+	p
+		font-size: 14px
+	.center-line-text
+		position: relative
+		width: 200px
+		height: 30px
+		margin: 0 auto
+		span
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			background-color: $light
+			padding: 0 10px
+			white-space: nowrap
+		&::before
+			content: ""
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			width: 200px
+			height: 1px
+			background-color: $gray
+			margin: 0 auto
+
