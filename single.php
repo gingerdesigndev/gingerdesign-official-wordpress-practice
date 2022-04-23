@@ -1,20 +1,20 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
+
 
 get_header();
 
-/* Start the Loop */
 while ( have_posts() ) :
 	the_post();
-	get_template_part( 'template-parts/content/content-single' );
-endwhile; // End of the loop.
+    $categories = get_the_category();
+    function getSlug($n){
+        return $n->slug;
+    }
+    $categoriesNames = array_map('getSlug', $categories);
+    if (in_array('projects', $categoriesNames)) {
+        get_template_part( 'template-parts/content/content-single-projects' );
+    } else {
+	    get_template_part( 'template-parts/content/content-single' );
+    }
+endwhile;
 
 get_footer();

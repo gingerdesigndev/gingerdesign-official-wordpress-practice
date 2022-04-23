@@ -1,20 +1,24 @@
 <?php
+$term = get_queried_object();
 get_header();
 
 if ( have_posts() ) {
 	?>
 	<header class="header-page">
         <div class="container">
-            <h1><?=get_the_archive_title('', false)?></h1>
-            <p><?=get_the_archive_description()?></p>
+            <h1>
+                <?=$term->slug;?>
+                <span><?=$term->name?></span>
+            </h1>
+            <p><?=$term->description?></p>
         </div>
 	</header>
     <div class="container gx-4">
-        <div class="list-posts-one-line">
+        <div class="row">
         <?php
         while ( have_posts() ) {
             the_post();
-            get_template_part( 'template-parts/post/one-line', get_post_format() );
+            get_template_part( 'template-parts/post/category', get_post_format() );
         }
         ?>
         </div>

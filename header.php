@@ -22,8 +22,8 @@
             </h1>
             <nav class="nav-main">
                 <ul>
-                    <li class="<?php if($pagename === 'portfolio') echo 'active'; ?>">
-                        <a href="/portfolio">專案作品</a>
+                    <li class="<?php if($pagename === '/category/projects') echo 'active'; ?>">
+                        <a href="/category/projects">專案作品</a>
                     </li>
                     <li class="<?php if($pagename === 'service') echo 'active'; ?>">
                         <a href="/service">服務項目</a>

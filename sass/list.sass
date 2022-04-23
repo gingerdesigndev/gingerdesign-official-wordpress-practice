@@ -10,3 +10,17 @@
 		a
 			img
 				height: 24px
+
+.list-categories
+	list-style: none
+	margin: 0
+	padding: 0
+	display: flex
+	li
+		color: $major
+		&:not(:last-child)
+			&::after
+				content: "．"
+				display: inline
+		a
+			color: $major
