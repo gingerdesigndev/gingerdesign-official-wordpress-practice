@@ -1,3 +1,7 @@
+<?php
+    $theme = theme();
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?> <?php twentytwentyone_the_html_classes(); ?>>
 <head>
@@ -10,14 +14,20 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body class="<?=$theme?>">
 <?php wp_body_open(); ?>
 <div id="page" class="site">
     <header class="header-main">
         <div class="container">
             <h1>
                 <a href="/">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/logo.svg" alt="Ginger Design">
+                    <?php
+                        $logo = 'logo';
+                        if ($theme === 'dark-theme') {
+                            $logo = 'logo-dark';
+                        }
+                    ?>
+                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/<?=$logo?>.svg" alt="Ginger Design">
                 </a>
             </h1>
             <nav class="nav-main">

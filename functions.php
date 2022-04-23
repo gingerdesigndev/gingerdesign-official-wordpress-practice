@@ -1,7 +1,7 @@
 <?php
 
 function get_default_image() {
-    $num = rand(1,3);
+    $num = rand(1,6);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
 }
 
@@ -19,9 +19,13 @@ function get_feature_image($postID) {
     return $img;
 }
 
-
-
-
+function theme() {  // add class to <body> tag
+    global $wp_query;
+    $theme = 'light-theme';
+    $page = $wp_query->query_vars['pagename'];
+    if ($page == 'service') $theme = 'dark-theme';
+    return $theme;
+}
 
 
 
