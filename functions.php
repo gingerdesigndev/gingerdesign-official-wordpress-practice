@@ -23,13 +23,23 @@ function theme() {  // add class to <body> tag
     global $wp_query;
     $theme = 'light-theme';
     $page = $wp_query->query_vars['pagename'];
-    if ($page == 'service') $theme = 'dark-theme';
+    if ($page == 'service' || isServiceCategory()) $theme = 'dark-theme';
     return $theme;
 }
 
-
-
-
+function isServiceCategory() {
+    $projects_category = get_category_by_slug('projects');
+    $taxonomies = array(
+        'category',
+    );
+    $args = array(
+        'child_of' => $projects_category->term_id,
+    );
+    $terms = get_terms($taxonomies, $args);
+    $current_category = get_queried_object();
+    $current_cat_id = $current_category->term_id;
+    return in_array($current_cat_id, array_column($terms, 'term_id'));
+}
 
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {

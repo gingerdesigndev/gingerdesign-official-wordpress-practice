@@ -1,5 +1,19 @@
 <?php
 get_header();
+
+
+$projects_category = get_category_by_slug('projects');
+$taxonomies = array(
+    'category',
+);
+$args = array(
+    'child_of' => $projects_category->term_id,
+    'hide_empty' => 0,
+    'order_by' => 'term_id',
+);
+
+$terms = get_terms($taxonomies, $args);
+
 ?>
 
 <div id="page-blog">
@@ -9,34 +23,17 @@ get_header();
             <p>從小型登陸頁到大型正式網站，<br>野薑致力於提供高品質設計給您。</p>
         </header>
         <ul class="list-service row gx-5">
+            <?php foreach($terms as $cat):
+                $img = get_field('category_img', $cat);
+            ?>
             <li class="col-12 col-lg-6">
-                <a href="">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/service-1.svg" alt="登陸頁形象官網建置服務">
-                    <h2>登陸頁形象官網建置服務<span>Landing Page Crafting Service</span></h2>
-                    <p>項目包含官方網站、形象網站、活動網站、遊戲型網站等。項目包含官方網站、形象網站、活動網站、遊戲型網站等。</p>
+                <a href="/category/<?=$cat->slug?>">
+                    <img src="<?=$img['url']?>" alt="<?=$cat->name?>">
+                    <h2><?=$cat->name?><span><?=get_field('category_title_en', $cat);?></span></h2>
+                    <p><?=$cat->description?></p>
                 </a>
             </li>
-            <li class="col-12 col-lg-6">
-                <a href="">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/service-1.svg" alt="知識內容型網站服務">
-                    <h2>知識內容型網站服務<span>Content Management System Crafting Service</span></h2>
-                    <p>項目包含官方網站、形象網站、活動網站、遊戲型網站等。項目包含官方網站、形象網站、活動網站、遊戲型網站等。</p>
-                </a>
-            </li>
-            <li class="col-12 col-lg-6">
-                <a href="">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/service-3.svg" alt="網路策略諮詢服務">
-                    <h2>網路策略諮詢服務<span>Digital Strategy Consulting Service</span></h2>
-                    <p>項目包含官方網站、形象網站、活動網站、遊戲型網站等。項目包含官方網站、形象網站、活動網站、遊戲型網站等。</p>
-                </a>
-            </li>
-            <li class="col-12 col-lg-6">
-                <a href="">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/service-4.svg" alt="用戶需求研究及工作坊">
-                    <h2>用戶需求研究及工作坊<span>User Research Workshop</span></h2>
-                    <p>項目包含官方網站、形象網站、活動網站、遊戲型網站等。項目包含官方網站、形象網站、活動網站、遊戲型網站等。</p>
-                </a>
-            </li>
+            <?php endforeach; ?>
         </ul>
         <div class="service-contact">
             <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/gem.svg" alt="填寫您的需求表單">

@@ -21,6 +21,6 @@
                     echo '<li><a href="'.$category_link.'">'.$category->cat_name.'</a></li>';
                 endforeach;
             ?>
-        </li>
+        </ul>
     </a>
 </div>

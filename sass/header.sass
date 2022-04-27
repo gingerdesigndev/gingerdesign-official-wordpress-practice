@@ -38,3 +38,47 @@
 						color: $main
 				a
 					color: #fff
+
+.header-page
+	margin: 80px 0
+	h1
+		font-size: 48px
+		padding-left: 24px
+		position: relative
+		font-weight: 700
+		color: $main
+		margin-bottom: 20px
+		&:first-letter
+			text-transform: uppercase
+		&::before
+			display: block
+			content: ""
+			position: absolute
+			left: 0
+			top: 0
+			width: 5px
+			height: 100px
+			background: linear-gradient(to bottom, $main, $main-light)
+		span
+			font-size: 28px
+			display: block
+	p
+		color: $gray
+		padding-left: 24px
+		font-size: 20px
+
+.header-page-service
+	text-align: center
+	margin: 80px 0
+	h1
+		font-size: 36px
+		color: #fff
+		span
+			font-size: 18px
+			display: block
+			margin-top: 10px
+	p
+		margin: 60px auto 0
+		max-width: 720px
+		font-size: 16px
+		color: #fff
