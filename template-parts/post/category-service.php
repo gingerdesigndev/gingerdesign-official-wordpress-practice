@@ -2,6 +2,7 @@
     $id = $recent['ID'];
     $categories = get_the_category();
     $term = get_queried_object();
+    $faq = get_faq();
 ?>
 
 <header class="header-page-service">
@@ -60,4 +61,16 @@
             <?php endforeach; ?>
         </div>
     </div>
+</div>
+
+<div class="box-faq">
+    <h2><?=$faq['name']?></h2>
+    <ul class="list-faq">
+        <?php foreach($faq['list'] as $val): ?>
+        <li>
+            <h3><?=get_field('question', $val)?></h3>
+            <div><?=get_field('answer', $val)?></div>
+        </li>
+        <?php endforeach; ?>
+    </ul>
 </div>

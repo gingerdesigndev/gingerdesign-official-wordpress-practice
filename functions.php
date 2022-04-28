@@ -41,6 +41,21 @@ function isServiceCategory() {
     return in_array($current_cat_id, array_column($terms, 'term_id'));
 }
 
+function get_faq() {
+    $faqCat = get_category_by_slug('faq');
+    $args = array(
+        'category' => $faqCat->term_id,
+        'orderby' => 'title',
+        'order' => 'ASC',
+    );
+    $list = get_posts( $args );
+    $data = array(
+        'name' => $faqCat->name,
+        'list' => $list,
+    );
+    return $data;
+}
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';

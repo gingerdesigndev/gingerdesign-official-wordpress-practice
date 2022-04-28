@@ -4,3 +4,7 @@ $('.copy-link').on('click', function(e) {
     copyTextToClipboard(href);
     $(this).addClass('done');
 });
+
+$('.list-faq').children('li').children('h3').on('click', function() {
+    $(this).closest('li').toggleClass('active');
+});
