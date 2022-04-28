@@ -1,0 +1,38 @@
+=xs
+	@media (max-width: 575px)
+		@content
+=sm
+	@media (min-width: 576px)
+		@content
+=md
+	@media (min-width: 768px)
+		@content
+=llg
+	@media (max-width: 991px)
+		@content
+=lg
+	@media (min-width: 992px)
+		@content
+=lxl
+	@media (max-width: 1199px)
+		@content
+=xl
+	@media (min-width: 1200px)
+		@content
+=xxl
+	@media (min-width: 1400px)
+		@content
+=xxxl
+	@media (min-width: 1600px)
+		@content
+
+.row-sm
+	margin-left: -5px
+	margin-right: -5px
+	> [class*="col-"], > .col
+		padding-left: 5px
+		padding-right: 5px
+
+.container
+	+xxxl
+		max-width: 1440px

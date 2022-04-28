@@ -1,43 +1,118 @@
 .header-main
 	border-bottom: 1px solid $border
+	position: relative
 	.container
 		display: flex
 		justify-content: space-between
 		align-items: center
-		height: 140px
+		height: 80px
+		+lg
+			height: 140px
 	h1
+		margin-bottom: 0
+		+llg
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
 		a
 			display: block
 		img
-			height: 52px
+			height: 40px
+			+lg
+				height: 52px
 
 .nav-main
-	ul
-		list-style: none
-		display: flex
-		margin: 0
-		padding: 0
-		li
-			margin-left: 20px
-			&:last-child
+	+llg
+		position: absolute
+		top: 81px
+		left: 0
+		z-index: 9
+		width: 100%
+		background-color: #fff
+		max-height: 0
+		overflow: hidden
+		transition: .4s
+		box-shadow: 0 4px 8px rgba(0, 0, 0, .2)
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+			li
+				border-bottom: 1px solid $border
 				a
-					background-color: $gold-light
-			a
-				display: block
-				padding: 15px 20px
-				color: $main
-				font-size: 18px
-				text-decoration: none
+					text-decoration: none
+					display: block
+					padding: 15px 20px
+					color: $main
+					text-align: center
+	+lg
+		ul
+			list-style: none
+			display: flex
+			margin: 0
+			padding: 0
+			li
+				margin-left: 20px
+				&:last-child
+					a
+						background-color: $gold-light
+				a
+					display: block
+					padding: 15px 20px
+					color: $main
+					font-size: 18px
+					text-decoration: none
+
+.btn-nav-main
+	margin: 0 1rem 0 auto
+	cursor: pointer
+	i
+		display: block
+		width: 24px
+		height: 2px
+		background-color: $main
+		transition: .2s
+		opacity: 1
+		&:not(:last-child)
+			margin-bottom: 4px
+	+lg
+		display: none
+
+.open-nav-main
+	.nav-main
+		max-height: 500px
+	.btn-nav-main
+		i
+			position: relative
+			&:nth-child(1)
+				transform: rotate(45deg)
+				top: 4px
+			&:nth-child(2)
+				opacity: 0
+			&:nth-child(3)
+				transform: rotate(-45deg)
+				bottom: 8px
 
 .dark-theme
 	.nav-main
-		ul
-			li
-				&:last-child
+		+llg
+			ul
+				li
 					a
-						color: $main
-				a
-					color: #fff
+						color: #fff
+						background-color: $main-dark
+		+lg
+			ul
+				li
+					&:last-child
+						a
+							color: $main
+					a
+						color: #fff
+	.btn-nav-main
+		i
+			background-color: #fff
 
 .header-page
 	margin: 80px 0

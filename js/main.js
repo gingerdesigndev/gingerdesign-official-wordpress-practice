@@ -8,3 +8,7 @@ $('.copy-link').on('click', function(e) {
 $('.list-faq').children('li').children('h3').on('click', function() {
     $(this).closest('li').toggleClass('active');
 });
+
+$('.btn-nav-main').on('click', function() {
+    $('body').toggleClass('open-nav-main');
+});
