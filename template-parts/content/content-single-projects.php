@@ -8,7 +8,7 @@
             <h1 class="single-title"><?=the_title();?></h1>
             <div class="row gx-5">
                 <div class="col-12 col-lg-8">
-                    <img src="<?=the_post_thumbnail_url()?>" alt="<?=the_title()?>" class="w-100 mb-5">
+                    <img src="<?=the_post_thumbnail_url()?>" alt="<?=the_title()?>" class="w-100 mb-3 mb-md-5">
                     <?=the_excerpt();?>
                 </div>
                 <div class="col-12 col-lg-4">

@@ -18,7 +18,7 @@
 <div class="service-content">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 mb-5 mb-md-0">
                 <?=get_field('service_content', $term);?>
             </div>
             <div class="col-12 col-md-4 text-center">
@@ -64,13 +64,15 @@
 </div>
 
 <div class="box-faq">
-    <h2><?=$faq['name']?></h2>
-    <ul class="list-faq">
-        <?php foreach($faq['list'] as $val): ?>
-        <li>
-            <h3><?=get_field('question', $val)?></h3>
-            <div><?=get_field('answer', $val)?></div>
-        </li>
-        <?php endforeach; ?>
-    </ul>
+    <div class="container">
+        <h2><?=$faq['name']?></h2>
+        <ul class="list-faq">
+            <?php foreach($faq['list'] as $val): ?>
+            <li>
+                <h3><?=get_field('question', $val)?></h3>
+                <div><?=get_field('answer', $val)?></div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </div>

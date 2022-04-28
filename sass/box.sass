@@ -1,23 +1,21 @@
 .box-list
-	margin-bottom: 100px
-	padding-bottom: 100px
+	margin-bottom: 50px
+	padding-bottom: 50px
 	border-bottom: 1px solid $main
+	+md
+		margin-bottom: 100px
+		padding-bottom: 100px
 
 .box-single
-	padding: 120px 0 80px
+	padding: 40px 0 40px
+	+md
+		padding: 120px 0 80px
 
 .single-related-posts
 	border-top: 1px solid $main
 	padding: 40px 0
 
-.btn-major
-	border: 1px solid $major
-	color: $major
-	padding: 12px 24px
-	&:hover
-		color: $major
-
-.service-contact
+.box-service-contact
 	margin: 136px 0
 	text-align: center
 	img
@@ -41,7 +39,7 @@
 		margin: 0
 		padding: 0
 		li
-			margin-bottom: 1rem
+			margin-bottom: 2rem
 			&.active
 				> div
 					display: block

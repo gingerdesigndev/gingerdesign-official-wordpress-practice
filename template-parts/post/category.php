@@ -5,22 +5,24 @@
 ?>
 
 <div class="col-12 col-sm-6 post-item">
-    <a href="<?=the_permalink();?>">
+    <div>
         <div class="post-img">
-            <img src="<?=get_feature_image($id)?>" alt="<?=the_title()?>">
+            <a href="<?=the_permalink();?>">
+                <img src="<?=get_feature_image($id)?>" alt="<?=the_title()?>">
+            </a>
         </div>
         <div class="post-text">
-            <h3 class="post-title max-two-lines"><?=the_title()?></h3>
+            <h3 class="post-title max-two-lines">
+                <a href="<?=the_permalink();?>"><?=the_title()?></a>
+            </h3>
         </div>
         <ul class="list-categories">
             <?php
-                foreach($categories as $category) :
-                    if(is_category() && $category->name == $term->name)
-                        continue;
-                    $category_link = get_category_link( $category );
-                    echo '<li><a href="'.$category_link.'">'.$category->cat_name.'</a></li>';
-                endforeach;
+                foreach ($categories as $category):
+                if (is_category() && $category->name == $term->name) continue;
             ?>
+                <li><a href="/category/<?=$category->slug?>"><?=$category->cat_name?></a></li>
+            <?php endforeach; ?>
         </ul>
-    </a>
+    </div>
 </div>

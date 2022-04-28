@@ -22,7 +22,7 @@ $terms = get_terms($taxonomies, $args);
             <h1>Service<span>服務項目</span></h1>
             <p>從小型登陸頁到大型正式網站，<br>野薑致力於提供高品質設計給您。</p>
         </header>
-        <ul class="list-service row gx-5">
+        <ul class="list-service row gx-md-5">
             <?php foreach($terms as $cat):
                 $img = get_field('category_img', $cat);
             ?>
@@ -35,7 +35,7 @@ $terms = get_terms($taxonomies, $args);
             </li>
             <?php endforeach; ?>
         </ul>
-        <div class="service-contact">
+        <div class="box-service-contact">
             <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/gem.svg" alt="填寫您的需求表單">
             <p>您好，請填寫您的需求表單，<br>幫助您釐清專案思考</p>
             <a href="#" class="btn btn-gold">聯絡我們</a>

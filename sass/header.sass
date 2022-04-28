@@ -63,6 +63,9 @@
 					color: $main
 					font-size: 18px
 					text-decoration: none
+					transition: .4s
+					&:hover
+						color: $main-dark
 
 .btn-nav-main
 	margin: 0 1rem 0 auto
@@ -115,14 +118,18 @@
 			background-color: #fff
 
 .header-page
-	margin: 80px 0
+	margin: 40px 0
+	+md
+		margin: 80px 0
 	h1
-		font-size: 48px
-		padding-left: 24px
+		font-size: 36px
+		padding: 0 0 10px 24px
 		position: relative
 		font-weight: 700
 		color: $main
 		margin-bottom: 20px
+		+md
+			font-size: 48px
 		&:first-letter
 			text-transform: uppercase
 		&::before
@@ -132,28 +139,71 @@
 			left: 0
 			top: 0
 			width: 5px
-			height: 100px
+			height: 100%
 			background: linear-gradient(to bottom, $main, $main-light)
 		span
-			font-size: 28px
+			font-size: 22px
 			display: block
+			+md
+				font-size: 28px
 	p
 		color: $gray
 		padding-left: 24px
-		font-size: 20px
+		font-size: 16px
+		+md
+			font-size: 20px
 
 .header-page-service
 	text-align: center
-	margin: 80px 0
+	margin: 40px 0
+	+md
+		margin: 80px 0
 	h1
-		font-size: 36px
+		font-size: 24px
 		color: #fff
+		+md
+			font-size: 36px
 		span
-			font-size: 18px
+			font-size: 16px
 			display: block
 			margin-top: 10px
+			+md
+				font-size: 18px
 	p
-		margin: 60px auto 0
+		margin: 20px auto 0
 		max-width: 720px
-		font-size: 16px
+		font-size: 14px
 		color: #fff
+		+md
+			margin-top: 60px
+			font-size: 16px
+
+.header-category
+	position: relative
+	margin-bottom: 24px
+	padding-right: 40px
+	+md
+		margin-bottom: 48px
+	h2
+		color: $main
+		font-size: 24px
+		font-weight: 700
+		margin: 0
+		+md
+			font-size: 36px
+		span
+			font-size: 18px
+			font-weight: 500
+			display: block
+			margin-top: .5rem
+			+md
+				font-size: 24px
+	a
+		position: absolute
+		right: 1rem
+		top: 50%
+		transform: translateY(-50%)
+		img
+			height: 24px
+			+md
+				height: 34px
