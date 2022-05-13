@@ -37,7 +37,7 @@ get_header();
     <?php get_template_part('template-parts/post/list', 'guide', array( 'category_slug' => 'guide', 'num' => 3 )); ?>
     <?php get_template_part('template-parts/post/list', 'viewpoint', array( 'category_slug' => 'viewpoint', 'num' => 3 )); ?>
     <?php get_template_part('template-parts/post/list', 'lab', array( 'category_slug' => 'lab', 'num' => 3 )); ?>
-    <?php get_template_part('template-parts/post/list-text', 'diary', array( 'category_slug' => 'diary', 'num' => 3, )); ?>
+    <?php get_template_part('template-parts/post/list-fb-posts'); ?>
 </div>
 
 <?php
