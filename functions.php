@@ -24,7 +24,7 @@ function theme() {  // add class to <body> tag
     $theme = 'light-theme';
     $page = $wp_query->query_vars['pagename'];
     $darkPages = ['service', 'contact'];
-    if (in_array($page, $darkPages) || isServiceCategory()) $theme = 'dark-theme';
+    if (is_home() || in_array($page, $darkPages) || isServiceCategory()) $theme = 'dark-theme';
     return $theme;
 }
 
