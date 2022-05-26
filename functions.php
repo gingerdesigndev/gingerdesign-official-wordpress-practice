@@ -55,6 +55,7 @@ function get_faq() {
         'category' => $faqCat->term_id,
         'orderby' => 'title',
         'order' => 'ASC',
+        'numberposts' => -1,
     );
     $list = get_posts( $args );
     $data = array(

@@ -16,13 +16,13 @@
                 <a href="<?=the_permalink();?>"><?=the_title()?></a>
             </h3>
         </div>
-        <ul class="list-categories">
-            <?php
-                foreach ($categories as $category):
-                if (is_category() && $category->name == $term->name) continue;
+        <div class="list-categories">
+            <?php foreach($categories as $category) :
+                if (!(is_category() && $category->name == $term->name)):
+                $category_link = get_category_link( $category );
             ?>
-                <li><a href="/category/<?=$category->slug?>"><?=$category->cat_name?></a></li>
-            <?php endforeach; ?>
-        </ul>
+                <a href="<?=$category_link?>"><?=$category->cat_name?></a>
+            <? endif; endforeach; ?>
+        </div>
     </div>
 </div>

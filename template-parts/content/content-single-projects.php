@@ -18,7 +18,7 @@
                         <li>作品年份 / <?=the_field('year');?>
                     </ul>
                     <p><a href="<?=the_field('link');?>" class="btn btn-major" target="_blank" rel="noopener noreferrer">網站連結</a></p>
-                    <p><a href="#" class="btn btn-major" target="_blank" rel="noopener noreferrer">我想知道本專案時程與報價</a></p>
+                    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSehiu9etbRwLqFSLsRQ_ixHWK9UoQHilQLtdhLhxf8wGULihA/viewform" class="btn btn-major" target="_blank" rel="noopener noreferrer">我想知道本專案時程與報價</a></p>
                 </div>
             </div>
             <div class="single-content"><?=the_content();?></div>

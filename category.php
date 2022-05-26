@@ -1,9 +1,10 @@
 <?php
 $term = get_queried_object();
+$projects_category = get_category_by_slug('projects');
 get_header();
 
-if (isServiceCategory()) {
-    get_template_part( 'template-parts/post/category-service', get_post_format() );
+if ($term->category_parent === $projects_category->term_id) {
+    get_template_part( 'template-parts/post/cat-service', get_post_format() );
 } else {
     if ( have_posts() ) {
         ?>

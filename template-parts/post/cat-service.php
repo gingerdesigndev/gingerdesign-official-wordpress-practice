@@ -46,17 +46,15 @@
                         <div class="post-text">
                             <h3 class="post-title max-two-lines"><?=$recent['post_title']?></h3>
                         </div>
-                        <ul class="list-categories">
-                            <?php
-                                foreach($categories as $category) :
-                                    if(is_category() && $category->name == $term->name)
-                                        continue;
-                                    $category_link = get_category_link( $category );
-                                    echo '<li><a href="'.$category_link.'">'.$category->cat_name.'</a></li>';
-                                endforeach;
-                            ?>
-                        </ul>
                     </a>
+                    <div class="list-categories">
+                        <?php foreach($categories as $category) :
+                            if (!(is_category() && $category->name == $term->name)):
+                            $category_link = get_category_link( $category );
+                        ?>
+                            <a href="<?=$category_link?>"><?=$category->cat_name?></a>
+                        <? endif; endforeach; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
