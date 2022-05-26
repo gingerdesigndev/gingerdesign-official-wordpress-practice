@@ -23,7 +23,8 @@ function theme() {  // add class to <body> tag
     global $wp_query;
     $theme = 'light-theme';
     $page = $wp_query->query_vars['pagename'];
-    if ($page == 'service' || isServiceCategory()) $theme = 'dark-theme';
+    $darkPages = ['service', 'contact'];
+    if (in_array($page, $darkPages) || isServiceCategory()) $theme = 'dark-theme';
     return $theme;
 }
 

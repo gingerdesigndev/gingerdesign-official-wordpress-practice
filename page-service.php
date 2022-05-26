@@ -1,7 +1,5 @@
 <?php
 get_header();
-
-
 $projects_category = get_category_by_slug('projects');
 $taxonomies = array(
     'category',
@@ -11,9 +9,7 @@ $args = array(
     'hide_empty' => 0,
     'order_by' => 'term_id',
 );
-
 $terms = get_terms($taxonomies, $args);
-
 ?>
 
 <div id="page-blog">
