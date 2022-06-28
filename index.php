@@ -19,9 +19,9 @@ get_header();
 
 <div class="index-wrap">
 <div class="index-welcome">
-    <div class="container">
+    <div class="container px-4">
         <div class="row">
-            <div class="col-12 col-lg-4 order-lg-2 offset-lg-1">
+            <div class="col-12 col-lg-4 order-lg-2 offset-lg-1 mb-5 mb-lg-0">
                 <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/index-welcome.svg" alt="歡迎來到野薑設計工作室">
             </div>
             <div class="col-12 col-lg-7 order-lg-1">
