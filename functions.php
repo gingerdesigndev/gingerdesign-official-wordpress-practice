@@ -1,7 +1,4 @@
 <?php
-
-@ini_set( 'upload_max_size' , '10M' );
-
 function get_default_image() {
     $num = rand(1,6);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
