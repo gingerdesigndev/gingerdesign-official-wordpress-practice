@@ -9,6 +9,7 @@ $args = array(
     'order_by' => 'term_id',
 );
 $terms = get_terms($taxonomies, $args);
+usort($terms, fn($a, $b) => get_field('cat_order', $b) - get_field('cat_order', $a));
 ?>
 
 <header class="header-page">
@@ -18,6 +19,7 @@ $terms = get_terms($taxonomies, $args);
 <ul class="list-service row gx-md-5">
     <?php foreach($terms as $cat):
         $img = get_field('category_img', $cat);
+        $order = get_field('cat_order', $cat);
     ?>
     <li class="col-12 col-lg-6">
         <a href="/category/<?=$cat->slug?>">

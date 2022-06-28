@@ -6,6 +6,7 @@
 
 .single-title
 	font-size: 24px
+	font-weight: bold
 	color: $main
 	margin-bottom: 20px
 	+md
@@ -17,3 +18,18 @@
 	h2
 		font-size: 24px
 		color: $main
+
+.copy-link
+	position: relative
+	&.done span
+		display: block
+	span
+		display: none
+		position: absolute
+		right: -8px
+		top: -6px
+		font-size: 12px
+		background-color: #fff
+		border: 1px solid $main
+		color: $main
+		border-radius: 50%

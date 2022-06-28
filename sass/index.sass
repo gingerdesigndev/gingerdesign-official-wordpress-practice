@@ -1,3 +1,16 @@
+.home
+	padding-top: calc(100vh - 141px)
+	.header-main
+		border-top: 1px solid transparent
+		animation: toBlue 50s
+		background-color: $main-dark
+		&:hover
+			background-color: $main-dark
+			border-top: 1px solid rgba(255, 255, 255, .2)
+
+.index-wrap
+	background-color: $main-dark
+
 .index-welcome
 	padding: 96px 0 48px
 	border-bottom: 1px solid $gold-light
@@ -10,3 +23,29 @@
 
 .index-service, .index-projects
 	border-bottom: 1px solid $gold-light
+	padding-bottom: 4rem
+
+.index-banner
+	position: fixed
+	top: 0
+	left: 10vw
+	z-index: -1
+	width: 80vw
+	height: 100vh
+#lottie
+	animation: moveUp 50s
+	position: absolute
+	bottom: -160vh
+	left: 0
+	width: 100%
+
+@keyframes moveUp
+	0%
+		bottom: 0
+	100%
+		bottom: -160vh
+@keyframes toBlue
+	0%
+		background-color: transparent
+	100%
+		background-color: $main-dark

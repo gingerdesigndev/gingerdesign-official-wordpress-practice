@@ -20,7 +20,10 @@
                     <a href="https://line.me/R/share?text=<?=get_permalink()?>" target="_blank" rel="noopener noreferrer"><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-line.svg" alt="share to LINE"></a>
                 </li>
                 <li>
-                    <a href="#" class="copy-link"><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-link.svg" alt="share link"></a>
+                    <a href="#" class="copy-link">
+                        <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-link.svg" alt="share link">
+                        <span class="material-icons-outlined">done</span>
+                    </a>
                 </li>
             </ul>
         </div>
