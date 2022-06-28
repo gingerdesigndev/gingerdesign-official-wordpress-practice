@@ -3,7 +3,7 @@
 ?>
 
 <div class="box-single">
-    <div class="container">
+    <div class="container px-4">
         <article id="post-<?=the_ID();?>" <?=post_class();?>>
             <h1 class="single-title"><?=the_title();?></h1>
             <div class="row gx-5">
