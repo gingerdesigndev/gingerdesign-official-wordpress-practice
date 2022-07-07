@@ -32,7 +32,6 @@ if ($('#lottieRef').length) {
     const scrollPercentRounded = Math.round(scrollPercent);
     $(window).scroll(function() {
         const st = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(st);
         //control anim frame
         const animStep = st * scrollPercentRounded;
         if (animStep < totalFrames) {

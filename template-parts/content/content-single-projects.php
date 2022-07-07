@@ -9,7 +9,7 @@
             <div class="row gx-5">
                 <div class="col-12 col-lg-8">
                     <img src="<?=the_post_thumbnail_url()?>" alt="<?=the_title()?>" class="w-100 mb-3 mb-md-5">
-                    <?=the_excerpt();?>
+                    <!-- <?=the_excerpt();?> -->
                 </div>
                 <div class="col-12 col-lg-4">
                     <ul class="list-unstyled">

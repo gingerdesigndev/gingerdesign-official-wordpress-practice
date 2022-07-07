@@ -34,20 +34,25 @@
 		font-size: 24px
 		margin-bottom: 60px
 		text-align: center
-	ul
-		list-style:  none
-		margin: 0
-		padding: 0
-		li
-			margin-bottom: 2rem
-			&.active
-				> div
-					display: block
-			h3
-				font-size: 18px
-				cursor: pointer
+
+.list-faq
+	list-style:  none
+	margin: 0
+	padding: 0
+	> li
+		margin-bottom: 1rem
+		padding-bottom: 1rem
+		border-bottom: 1px solid rgba(255, 255, 255, .2)
+		&.active
 			> div
-				display: none
+				display: block
+		h3
+			font-size: 18px
+			cursor: pointer
+		> div
+			display: none
+			p:last-child
+				margin-bottom: 0
 
 .box-sm
 	max-width: 580px

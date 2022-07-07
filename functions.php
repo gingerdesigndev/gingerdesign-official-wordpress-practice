@@ -1,6 +1,6 @@
 <?php
 function get_default_image() {
-    $num = rand(1,6);
+    $num = rand(1,1);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
 }
 
@@ -22,7 +22,7 @@ function theme() {  // add class to <body> tag
     global $wp_query;
     $theme = 'light-theme';
     $page = $wp_query->query_vars['pagename'];
-    $darkPages = ['service', 'contact'];
+    $darkPages = ['service'];
     if (is_home() || in_array($page, $darkPages) || isServiceCategory()) $theme = 'dark-theme';
     return $theme;
 }
