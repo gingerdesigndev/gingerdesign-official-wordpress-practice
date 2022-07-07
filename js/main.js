@@ -1,15 +1,85 @@
-import animationData from './banner.js';
+import { animationData } from './animation.js'
 
-if ($('#lottie').length) {
+if ($('#lottieRef').length) {
     var params = {
-        container: document.getElementById('lottie'),
+        container: document.getElementById('lottieRef'),
         renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        animationData: animationData
+        loop: false,
+        autoplay: false,
+        rendererSettings: {
+            progressiveLoad: false,
+            preserveAspectRatio: "xMidYMid slice",
+        },
+        animationData,
     };
     var anim;
     anim = lottie.loadAnimation(params);
+    let animPosition = { right: -100, bottom: 400 };
+    let lastScrollTop = 0;
+    let isCompleteAnim = false;
+    let animSite = 0;
+    const isMobile = window.innerWidth < 768;
+    const animWidth = $('#lottieRef').width();
+    const bannerHeight = window.innerHeight * 3;
+    const mainPadding = isMobile ? 50 : 120;
+    const totalFrames = 34000;
+    const animRightStart = animPosition.right;
+    const animRightEndPoint = (window.innerWidth - animWidth) / 2;
+    const animBottomEnd = isMobile ? -320 : -900;
+    const animBottomEndPoint = animBottomEnd + mainPadding + 20;
+    const bannerScrollHeight = window.innerHeight * 2 + mainPadding * 2 + 100;
+    const scrollPercent = totalFrames / bannerScrollHeight;
+    const scrollPercentRounded = Math.round(scrollPercent);
+    $(window).scroll(function() {
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(st);
+        //control anim frame
+        const animStep = st * scrollPercentRounded;
+        if (animStep < totalFrames) {
+            !!anim && anim.goToAndStop(animStep);
+        } else {
+            !!anim && anim.goToAndStop(totalFrames);
+        }
+        //control anim position
+        const animRightPercent = (-animRightStart + animRightEndPoint) / (bannerHeight * 0.1);
+        const animRightStep = animPosition.right + (st - bannerHeight * 0.5) * animRightPercent;
+        const animBottomPercent = (animPosition.bottom - animBottomEnd) / bannerScrollHeight;
+        const animBottomStep = animPosition.bottom - st * animBottomPercent;
+        if (animBottomStep > animBottomEndPoint) {
+            setAnimPosition({ ...animPosition, bottom: animBottomStep });
+            if (st > bannerHeight * 0.5 && animRightStep < animRightEndPoint) {
+                setAnimPosition({ right: animRightStep, bottom: animBottomStep, });
+            } else if (st > bannerHeight * 0.5) {
+                setAnimPosition({ right: animRightEndPoint, bottom: animBottomStep, });
+            }
+        }
+        //control anim is complete
+        if (st > lastScrollTop && st > bannerHeight + 100) {
+            isCompleteAnim = true;
+        } else if (st < lastScrollTop && st < bannerHeight + 100) {
+            isCompleteAnim = false;
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+        //control anim site
+        if (st > bannerHeight * 0.5) {
+            animSite = 2;
+            $('.slogan').removeClass('active');
+            $('#slogan-3').addClass('active');
+        } else if (st > bannerHeight * 0.25) {
+            animSite = 1;
+            $('.slogan').removeClass('active');
+            $('#slogan-2').addClass('active');
+        } else {
+            animSite = 0;
+            $('.slogan').removeClass('active');
+            $('#slogan-1').addClass('active');
+        }
+    });
+}
+
+function setAnimPosition(position) {
+    const { right, bottom } = position;
+    $('#lottieRef').css({ right, bottom });
 }
 
 $('.copy-link').on('click', function(e) {
