@@ -7,9 +7,10 @@
         <article id="post-<?=the_ID();?>" <?=post_class();?>>
             <h1 class="single-title"><?=the_title();?></h1>
             <div class="row gx-5">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 mb-5 mb-lg-0">
                     <img src="<?=the_post_thumbnail_url()?>" alt="<?=the_title()?>" class="w-100 mb-3 mb-md-5">
-                    <!-- <?=the_excerpt();?> -->
+                    <div class="single-content"><?=the_content();?></div>
+                    <p class="mt-5 text-center"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehiu9etbRwLqFSLsRQ_ixHWK9UoQHilQLtdhLhxf8wGULihA/viewform" class="btn btn-major" target="_blank" rel="noopener noreferrer">我想知道本專案時程與報價</a></p>
                 </div>
                 <div class="col-12 col-lg-4">
                     <ul class="list-unstyled">
@@ -21,7 +22,6 @@
                     <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSehiu9etbRwLqFSLsRQ_ixHWK9UoQHilQLtdhLhxf8wGULihA/viewform" class="btn btn-major" target="_blank" rel="noopener noreferrer">我想知道本專案時程與報價</a></p>
                 </div>
             </div>
-            <div class="single-content"><?=the_content();?></div>
         </article>
         <div class="text-center">
             <ul class="list-shares">
@@ -43,7 +43,7 @@
             </ul>
         </div>
         <div class="single-related-posts">
-            <h2 class="title-md text-center">更多專案<span>More Projects</span></h2>
+            <h2 class="title-md text-center"><b>更多專案<span>More Projects</span><b></h2>
             <div class="row">
                 <?php
                     $related = get_posts( array(
@@ -71,8 +71,8 @@
                             <img src="<?=get_feature_image($id)?>" alt="<?=$title?>">
                         </div>
                         <div class="post-text">
-                            <label class="post-sub-cat"><?=$my_post_child_cats[0]?></label>
                             <h3 class="post-title max-two-lines"><?=$title?></h3>
+                            <label class="post-sub-cat"><?=$my_post_child_cats[0]?></label>
                         </div>
                     </a>
                 </div>

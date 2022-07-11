@@ -33,7 +33,7 @@ get_header();
                     <h4>Frontend Team</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/alice.png" alt="Alice">
+                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/alvin.png" alt="Alvin">
                     <h3>Alvin</h3>
                     <h4>Frontend Team</h4>
                 </div>

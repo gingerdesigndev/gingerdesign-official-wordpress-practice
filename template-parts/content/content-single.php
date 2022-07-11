@@ -3,7 +3,7 @@
 ?>
 
 <div class="box-single">
-    <div class="container px-4">
+    <div class="container px-4" style="max-width: 800px;">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <h1 class="single-title"><?php the_title(); ?></h1>
             <div class="single-content"><?=the_content();?></div>
@@ -27,6 +27,8 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="container px-4">
         <div class="single-related-posts">
             <h2 class="title-md text-center">相關文章<span>Related Articles</span></h2>
             <div class="row">

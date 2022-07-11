@@ -70,3 +70,24 @@
 			margin: 0
 			+md
 				font-size: 16px
+
+.list-faq
+	list-style:  none
+	margin: 0
+	padding: 0
+	> li
+		margin-bottom: 1rem
+		padding-bottom: 1rem
+		border-bottom: 1px solid rgba(255, 255, 255, .2)
+		&.active
+			> div
+				display: block
+		h3
+			font-size: 18px
+			cursor: pointer
+			margin-bottom: 0
+		> div
+			display: none
+			margin-top: 1rem
+			p:last-child
+				margin-bottom: 0

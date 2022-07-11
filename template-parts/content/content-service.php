@@ -21,7 +21,7 @@ usort($terms, fn($a, $b) => get_field('cat_order', $b) - get_field('cat_order', 
         $img = get_field('category_img', $cat);
         $order = get_field('cat_order', $cat);
     ?>
-    <li class="col-12 col-lg-6">
+    <li class="col-12 col-lg-6 col-xxl-3">
         <a href="/category/<?=$cat->slug?>">
             <img src="<?=$img['url']?>" alt="<?=$cat->name?>">
             <h2><?=$cat->name?><span><?=get_field('category_title_en', $cat);?></span></h2>
