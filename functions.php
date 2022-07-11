@@ -27,9 +27,17 @@ function theme() {  // add class to <body> tag
     return $theme;
 }
 
-function getFBPosts() {
+function getFBPosts($limit) {
     $token = 'EAAOu6CbZCrnIBAD7FQxa2tphTZAjSHc5cNrSM6Y8S3mnlttcMSNKUd0czXqf1ZBJ9QA3ZBD4fG6qfTDCY4Vgl3HrjXRNoYp77gtBtqDFzEqNH0UnPdWJQEfcICD7kmLBNxqZAdRA1vBSwGzHjUZAU4o0UVIxqgrI1QOGUJvplT3wPZALSvfhpX9';
-    $apiUrl = "https://graph.facebook.com/me/published_posts?access_token={$token}&limit=3";
+    $apiUrl = "https://graph.facebook.com/me/published_posts?access_token={$token}&limit={$limit}&fields=created_time,message,shares,comments.summary(true),likes.summary(true)";
+    $response = wp_remote_get($apiUrl);
+    $body = wp_remote_retrieve_body( $response );
+    return $body;
+}
+
+function getFBPost($id) {
+    $token = 'EAAOu6CbZCrnIBAD7FQxa2tphTZAjSHc5cNrSM6Y8S3mnlttcMSNKUd0czXqf1ZBJ9QA3ZBD4fG6qfTDCY4Vgl3HrjXRNoYp77gtBtqDFzEqNH0UnPdWJQEfcICD7kmLBNxqZAdRA1vBSwGzHjUZAU4o0UVIxqgrI1QOGUJvplT3wPZALSvfhpX9';
+    $apiUrl = "https://graph.facebook.com/{$id}?access_token={$token}&fields=shares,message_tags,id,full_picture,created_time,message,comments.summary(true),likes.summary(true)";
     $response = wp_remote_get($apiUrl);
     $body = wp_remote_retrieve_body( $response );
     return $body;
