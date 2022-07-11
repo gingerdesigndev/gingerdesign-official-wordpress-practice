@@ -15,7 +15,7 @@
 </head>
 
 <body class="<?=$theme?> <?php if (is_home()) echo 'body-home'; ?>">
-<?php wp_body_open(); ?>
+<!-- <?php wp_body_open(); ?> -->
 
 <?php if (is_home()): ?>
     <?=get_template_part( 'template-parts/content/index-animation' );?>
