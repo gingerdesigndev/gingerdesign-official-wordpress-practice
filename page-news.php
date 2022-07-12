@@ -6,7 +6,10 @@
         $fbPost = json_decode(getFBPost($id));
     }
     if (!$fbPost) {
-        $fbPosts = json_decode(getFBPosts(9))->data;
+        $offset = (int) $_GET['offset'];
+        $fbPostData = json_decode(getFBPosts(9, $offset));
+        $fbPosts = $fbPostData->data;
+        $paging = $fbPostData->paging;
     }
     get_header();
 ?>
@@ -51,6 +54,25 @@
                     <?php endforeach; ?>
                 </ul>
                 <p class="news-message"><?=$fbPost->message?></p>
+                <div class="text-center">
+                    <ul class="list-shares my-5">
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?=get_permalink()?>" target="_blank" rel="noopener noreferrer"><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-facebook.svg" alt="share to Facebook"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/intent/tweet?url=<?=get_permalink()?>" target="_blank" rel="noopener noreferrer"><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-twitter.svg" alt="share to Twitter"></a>
+                        </li>
+                        <li>
+                            <a href="https://line.me/R/share?text=<?=get_permalink()?>" target="_blank" rel="noopener noreferrer"><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-line.svg" alt="share to LINE"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="copy-link">
+                                <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-link.svg" alt="share link">
+                                <span class="material-icons-outlined">done</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         <?php else: ?>
             <div class="row gx-lg-5 list-news">
@@ -60,7 +82,9 @@
                     <div class="col-12 col-lg-4 post-text-item mb-5">
                         <p class="post-date mb-1 ms-3"><?=$date->format('Y-m-d')?></p>
                         <div>
-
+                            <?php if($post->full_picture): ?>
+                            <img src="<?=$post->full_picture?>" class="w-100 mb-3">
+                            <?php endif; ?>
                             <a href="/news?id=<?=$post->id?>">
                                 <p class="post-excerpt max-eight-lines"><?=$post->message?></p>
                             </a>
@@ -68,6 +92,20 @@
                     </div>
                 <?php endforeach; ?>
             </div>
+            <ul class="list-prev-next">
+                <?php if($offset >= 9): ?>
+                <li class="prev">
+                    <a href="/news?offset=<?=$offset-9?>">
+                        <span class="material-icons">arrow_back</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <li class="next">
+                    <a href="/news?offset=<?=$offset+9?>">
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </li>
+            </ul>
         <?php endif; ?>
     </div>
 </div>

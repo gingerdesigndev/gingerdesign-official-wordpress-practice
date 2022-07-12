@@ -102,3 +102,23 @@
 	li
 		margin-right: 1rem
 		color: $major
+
+.list-prev-next
+	list-style: none
+	width: 200px
+	height: 48px
+	margin: 0 auto
+	position: relative
+	li
+		position: absolute
+		top: 0
+		&.prev
+			left: 0
+		&.next
+			right: 0
+		a
+			color: $gray-light
+			&:hover
+				color: $gray
+			span
+				font-size: 42px

@@ -1,5 +1,5 @@
 <?php
-    $fbPosts = json_decode(getFBPosts(3))->data;
+    $fbPosts = json_decode(getFBPosts(4, 0))->data;
 ?>
 
 <div class="box-list" id="<?=$category_slug?>">
