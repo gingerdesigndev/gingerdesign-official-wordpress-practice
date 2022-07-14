@@ -43,15 +43,11 @@ get_header();
 </div>
 
 <div class="index-projects">
-    <div class="container">
-        <?php get_template_part('template-parts/post/list-projects', 'projects', array( 'category_slug' => 'projects', 'num' => 2, )); ?>
-    </div>
+    <?php get_template_part('template-parts/post/list-projects', 'projects', array( 'category_slug' => 'projects', 'num' => 2, )); ?>
 </div>
 
-<div class="index-process">
-    <div class="container">
-        <?php get_template_part('template-parts/post/list', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
-    </div>
+<div class="index-process pb-5">
+    <?php get_template_part('template-parts/post/list', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
 </div>
 
 </div>

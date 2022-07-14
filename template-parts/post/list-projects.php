@@ -8,16 +8,16 @@
 ?>
 
 <div class="" id="<?=$category_slug?>">
+    <header class="header-page">
+        <div class="container">
+            <h1>
+                <?=$category_slug?>
+                <span><?=$category->name?></span>
+            </h1>
+            <p><?=$category->description?></p>
+        </div>
+    </header>
     <div class="container">
-        <header class="header-page">
-            <div class="container">
-                <h1>
-                    <?=$category_slug?>
-                    <span><?=$category->name?></span>
-                </h1>
-                <p><?=$category->description?></p>
-            </div>
-        </header>
         <div class="row gx-lg-5">
             <?php
                 $args = array( 'numberposts' => $num, 'category' => $category->cat_ID );

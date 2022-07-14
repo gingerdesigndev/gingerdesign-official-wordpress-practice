@@ -7,17 +7,17 @@
     if ($num === 3 || $num === 6) $postItemClass = 'col-12 col-lg-4';
 ?>
 
-<div class="box-list" id="<?=$category_slug?>">
+<div class="" id="<?=$category_slug?>">
+    <header class="header-page">
+        <div class="container">
+            <h1>
+                <?=$category_slug?>
+                <span><?=$category->name?></span>
+            </h1>
+            <p><?=$category->description?></p>
+        </div>
+    </header>
     <div class="container">
-        <header class="header-page">
-            <div class="container">
-                <h1>
-                    <?=$category_slug?>
-                    <span><?=$category->name?></span>
-                </h1>
-                <p><?=$category->description?></p>
-            </div>
-        </header>
         <div class="row">
             <?php
                 $args = array( 'numberposts' => $num, 'category' => $category->cat_ID );

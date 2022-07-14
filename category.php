@@ -28,8 +28,8 @@ if ($term->category_parent === $projects_category->term_id) {
             </div>
             <div>
                 <?=the_posts_pagination(array(
-                    'prev_text' => __( '<', 'textdomain' ),
-                    'next_text' => __( '>', 'textdomain' ),));?>
+                    'prev_text' => __( '<span class="material-icons">arrow_back</span>', 'textdomain' ),
+                    'next_text' => __( '<span class="material-icons">arrow_forward</span>', 'textdomain' ),));?>
             </div>
         </div>
         <?php
