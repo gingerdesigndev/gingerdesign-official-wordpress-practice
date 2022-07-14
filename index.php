@@ -48,6 +48,12 @@ get_header();
     </div>
 </div>
 
+<div class="index-process">
+    <div class="container">
+        <?php get_template_part('template-parts/post/list', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
+    </div>
+</div>
+
 </div>
 <?php
 get_footer();

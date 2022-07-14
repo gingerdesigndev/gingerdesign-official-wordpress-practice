@@ -61,7 +61,6 @@ function get_faq() {
     $faqCat = get_category_by_slug('faq');
     $args = array(
         'category' => $faqCat->term_id,
-        'orderby' => 'title',
         'order' => 'ASC',
         'numberposts' => -1,
     );

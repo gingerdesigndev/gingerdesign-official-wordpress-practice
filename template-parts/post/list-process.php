@@ -9,16 +9,16 @@
 
 <div class="box-list" id="<?=$category_slug?>">
     <div class="container">
-        <header class="header-category">
-            <h2>
-                <?=$category->description?>
-                <span><?=$category->name?></span>
-            </h2>
-            <a href="/category/<?=$category_slug?>" class="more">
-                <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/arrow-right.svg" alt="more">
-            </a>
+        <header class="header-page">
+            <div class="container">
+                <h1>
+                    <?=$category_slug?>
+                    <span><?=$category->name?></span>
+                </h1>
+                <p><?=$category->description?></p>
+            </div>
         </header>
-        <div class="row gx-lg-5">
+        <div class="row">
             <?php
                 $args = array( 'numberposts' => $num, 'category' => $category->cat_ID );
                 $recent_posts = wp_get_recent_posts( $args );
