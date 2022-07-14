@@ -25,9 +25,13 @@
         <?php if($fbPost):
             $date = new DateTime($fbPost->created_time);
             $shareCount = 0;
+            $tags = $fbPost->message_tags;
+            $title = $tags[0]->name;
+            $title = ltrim($title, '#');
             if ($fbPost->shares->count) $shareCount = $fbPost->shares->count;
         ?>
             <div class="box-news">
+                <h1 class="news-title"><?=$title?></h1>
                 <div class="news-info">
                     <div class="post-date"><?=$date->format('Y-m-d')?></div>
                     <ul class="list-counts">
