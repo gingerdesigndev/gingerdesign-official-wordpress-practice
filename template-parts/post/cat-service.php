@@ -18,7 +18,7 @@
 <div class="service-content">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-8 mb-5 mb-md-0">
+            <div class="col-12 col-md-8 mb-5 mb-md-0 single-content">
                 <?=get_field('service_content', $term);?>
             </div>
             <div class="col-12 col-md-4 text-center">

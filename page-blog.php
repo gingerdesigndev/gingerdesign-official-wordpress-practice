@@ -18,16 +18,16 @@ get_header();
                     <a href="#featured">精選文章</a>
                 </li>
                 <li>
-                    <a href="#cooperate">我要如何合作</a>
+                    <a href="#manual">我要如何合作</a>
                 </li>
                 <li>
-                    <a href="#operate">如何營運網站</a>
+                    <a href="#guide">如何營運網站</a>
                 </li>
                 <li>
-                    <a href="#change">數位世界變化</a>
+                    <a href="#viewpoint">數位世界變化</a>
                 </li>
                 <li>
-                    <a href="#diary">開業日記</a>
+                    <a href="#news">開業日記</a>
                 </li>
             </ul>
         </nav>

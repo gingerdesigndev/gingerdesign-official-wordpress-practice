@@ -2,7 +2,7 @@
     $fbPosts = json_decode(getFBPosts(4, 0))->data;
 ?>
 
-<div class="box-list" id="<?=$category_slug?>">
+<div class="box-list" id="news">
     <div class="container">
         <header class="header-category">
             <h2>
