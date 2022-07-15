@@ -48,8 +48,8 @@
                         </div>
                     </a>
                     <div class="list-categories">
-                        <?php foreach($categories as $category) :
-                            if (!(is_category() && $category->name == $term->name)):
+                        <?php foreach($categories as $category):
+                            if (!(is_category() && $category->name == $term->name) && $category->parent !== 0):
                             $category_link = get_category_link( $category );
                         ?>
                             <a href="<?=$category_link?>"><?=$category->cat_name?></a>
