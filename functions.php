@@ -1,6 +1,6 @@
 <?php
 function get_default_image() {
-    $num = rand(1,1);
+    $num = rand(1,3);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
 }
 
