@@ -1,9 +1,5 @@
 <?php
 get_header();
-// 網站建立實務手冊（manual）
-// 網站使用技術指南（guide）
-// 數位服務的趨勢觀點（viewpoint）
-// 設計與工程實驗（lab）
 ?>
 
 <div id="page-blog">

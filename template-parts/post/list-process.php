@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <?php
-                $args = array( 'numberposts' => $num, 'category' => $category->cat_ID );
+                $args = array( 'numberposts' => $num, 'category' => $category->cat_ID, 'post_status' => 'publish' );
                 $recent_posts = wp_get_recent_posts( $args );
                 foreach( $recent_posts as $key => $post) {
                     $link = get_permalink($post['ID']);
