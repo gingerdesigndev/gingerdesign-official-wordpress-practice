@@ -60,6 +60,7 @@
                         <div class="post-text">
                             <label class="post-sub-cat"><?=$my_post_child_cats[0]?></label>
                             <h3 class="post-title max-two-lines"><?=$title?></h3>
+                            <p class="post-excerpt max-three-lines"><?=$recent->post_excerpt?></p>
                         </div>
                     </a>
                 </div>

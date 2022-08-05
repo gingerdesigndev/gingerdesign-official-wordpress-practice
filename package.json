@@ -5,13 +5,9 @@
 	"author": "Chia Yi Lai",
 	"license": "ISC",
 	"devDependencies": {
-		"concurrently": "^6.2.1",
-		"node-sass": "^6.0.1",
-		"onchange": "^7.1.0"
+		"sass": "^1.52.2"
 	},
 	"scripts": {
-		"sass": "node-sass --output-style compressed ./sass/style.sass -o ./",
-		"sass-w": "onchange \"./sass/**/*.sass\" -- npm run sass",
-		"w": "concurrently \"npm run sass\" \"npm run sass-w\" "
+		"sass": "sass --watch --update --no-source-map --style=compressed sass/style.sass:style.css"
 	}
 }

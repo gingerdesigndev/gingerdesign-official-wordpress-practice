@@ -22,7 +22,7 @@
                 <?=get_field('service_content', $term);?>
             </div>
             <div class="col-12 col-md-4 text-center">
-                <a href="#" class="btn btn-gold">聯絡我們</a>
+                <a href="/contact" class="btn btn-gold">聯絡我們</a>
             </div>
         </div>
     </div>

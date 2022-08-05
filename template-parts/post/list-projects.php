@@ -39,9 +39,9 @@
                             <!-- <p class="post-excerpt max-three-lines"><?=$post['post_excerpt']?></p> -->
                         </div>
                         <div class="list-categories">
-                        <?php foreach($categories as $category) :
-                            if (!(is_category() && $category->name == $term->name)):
-                            $category_link = get_category_link( $category );
+                        <?php foreach($categories as $category):
+                            if ($category->slug !== 'projects'):
+                            $category_link = get_category_link($category);
                         ?>
                             <a href="<?=$category_link?>"><?=$category->cat_name?></a>
                         <? endif; endforeach; ?>
