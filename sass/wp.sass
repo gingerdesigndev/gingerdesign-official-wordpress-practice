@@ -8,6 +8,7 @@
 
 .wp-block-quote
     border-color: $major-light
+    border-width: 2px
     margin-left: 3rem
 
 .wp-block-pullquote
@@ -22,3 +23,16 @@
         font-size: 14px
         font-weight: 400
         color: $gray-dark
+        &::before
+            content: ""
+            display: inline-block
+            height: 1px
+            width: 32px
+            background-color: $gray-light
+            margin-right: 8px
+            position: relative
+            bottom: 4px
+
+.wp-block-code
+    background-color: #e6e6e6
+    border: 0
