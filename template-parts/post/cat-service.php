@@ -53,7 +53,7 @@
                             $category_link = get_category_link( $category );
                         ?>
                             <a href="<?=$category_link?>"><?=$category->cat_name?></a>
-                        <? endif; endforeach; ?>
+                        <?php endif; endforeach; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
