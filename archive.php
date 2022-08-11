@@ -12,10 +12,10 @@ if ( have_posts() ) {
     <div class="container gx-4">
         <div class="list-posts-one-line">
         <?php
-        while ( have_posts() ) {
-            the_post();
-            get_template_part( 'template-parts/post/one-line', get_post_format() );
-        }
+            while ( have_posts() ) {
+                the_post();
+                get_template_part( 'template-parts/post/list', get_post_format() );
+            }
         ?>
         </div>
         <div>

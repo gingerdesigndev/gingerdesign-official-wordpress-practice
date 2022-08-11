@@ -20,10 +20,10 @@ if ($term->category_parent === $projects_category->term_id) {
         <div class="container gx-4">
             <div class="row">
             <?php
-            while ( have_posts() ) {
-                the_post();
-                get_template_part( 'template-parts/post/category', get_post_format() );
-            }
+                while ( have_posts() ) {
+                    the_post();
+                    get_template_part( 'template-parts/post/category');
+                }
             ?>
             </div>
             <div>

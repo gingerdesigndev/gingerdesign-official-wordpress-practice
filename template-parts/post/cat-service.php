@@ -33,7 +33,7 @@
     <div class="container gx-4">
         <div class="row">
             <?php
-                $args = array( 'numberposts' => '2', 'category' => $term->term_id );
+                $args = array( 'numberposts' => '2', 'category' => $term->term_id, 'post_status' => 'publish' );
                 $recent_posts = wp_get_recent_posts( $args );
                 foreach( $recent_posts as $key => $recent):
                 $link = get_permalink($recent['ID']);
