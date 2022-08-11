@@ -1,5 +1,4 @@
 <?php
-    $id = $recent['ID'];
     $categories = get_the_category();
     $term = get_queried_object();
 ?>
@@ -8,7 +7,7 @@
     <div>
         <div class="post-img">
             <a href="<?=the_permalink();?>">
-                <img src="<?=get_feature_image($id)?>" alt="<?=the_title()?>">
+                <img src="<?=get_feature_image($term->term_id)?>" alt="<?=the_title()?>">
             </a>
         </div>
         <div class="post-text">
