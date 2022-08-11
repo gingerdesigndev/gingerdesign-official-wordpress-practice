@@ -22,7 +22,7 @@ if ($term->category_parent === $projects_category->term_id) {
             <?php
                 while ( have_posts() ) {
                     the_post();
-                    get_template_part( 'template-parts/post/category');
+                    get_template_part( 'template-parts/post/category', get_post_format());
                 }
             ?>
             </div>
