@@ -72,6 +72,12 @@ function get_faq() {
     return $data;
 }
 
+function mytheme_custom_excerpt_length( $length ) {
+    return 999;
+}
+add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
+remove_filter('excerpt_more', 'new_excerpt_more');
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';

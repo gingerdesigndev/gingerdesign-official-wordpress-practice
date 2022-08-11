@@ -1,6 +1,7 @@
 <?php
     $categories = get_the_category();
     $term = get_queried_object();
+    $isProjects = $term->slug === 'projects';
 ?>
 
 <div class="col-12 col-sm-6 post-item">
@@ -14,7 +15,11 @@
             <h3 class="post-title max-two-lines">
                 <a href="<?=the_permalink();?>"><?=the_title()?></a>
             </h3>
+            <?php if(!$isProjects): ?>
+            <p class="post-excerpt max-three-lines"><?=get_the_excerpt()?></p>
+            <?php endif; ?>
         </div>
+        <?php if($isProjects): ?>
         <div class="list-categories">
             <?php foreach($categories as $category) :
                 if (!(is_category() && $category->name == $term->name)):
@@ -23,5 +28,6 @@
                 <a href="<?=$category_link?>"><?=$category->cat_name?></a>
             <? endif; endforeach; ?>
         </div>
+        <?php endif; ?>
     </div>
 </div>
