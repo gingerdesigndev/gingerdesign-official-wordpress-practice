@@ -19,6 +19,15 @@
             <p class="post-excerpt max-three-lines"><?=get_the_excerpt()?></p>
             <?php endif; ?>
         </div>
-       
+        <?php if($isProjects): ?>
+        <div class="list-categories">
+            <?php foreach($categories as $category) :
+                if (!(is_category() && $category->name == $term->name)):
+                $category_link = get_category_link( $category );
+            ?>
+                <a href="<?=$category_link?>"><?=$category->cat_name?></a>
+            <?php endif; endforeach; ?>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
