@@ -36,7 +36,6 @@
                             <h3 class="post-title max-two-lines">
                                 <a href="<?=$link?>"><?=$post['post_title']?></a>
                             </h3>
-                            <!-- <p class="post-excerpt max-three-lines"><?=$post['post_excerpt']?></p> -->
                         </div>
                         <div class="list-categories">
                         <?php foreach($categories as $category):
@@ -44,7 +43,7 @@
                             $category_link = get_category_link($category);
                         ?>
                             <a href="<?=$category_link?>"><?=$category->cat_name?></a>
-                        <? endif; endforeach; ?>
+                        <?php endif; endforeach; ?>
                         </div>
                     </a>
                 </div>
