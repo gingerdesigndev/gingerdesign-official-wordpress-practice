@@ -5,7 +5,7 @@ get_header();
 <div id="page-blog">
     <div class="container">
         <header class="header-page">
-            <h1>Blog<span>部落格</span></h1>
+            <h1>Blog<span>知識專欄</span></h1>
             <p>展開專案充滿期待又擔心受傷害嗎？<br>來看看各種案例，讓您對專案有大方向！</p>
         </header>
         <nav class="nav-blog">

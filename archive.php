@@ -14,7 +14,7 @@ if ( have_posts() ) {
         <?php
             while ( have_posts() ) {
                 the_post();
-                get_template_part( 'template-parts/post/list', get_post_format() );
+                get_template_part( 'template-parts/post/list-archive', get_post_format() );
             }
         ?>
         </div>

@@ -31,8 +31,10 @@
     <p class="center-line-text"><span>Contact time</span></p>
     <p>Mon ~ Fri  10:00 ~ 18:00</p>
     <p class="center-line-text"><span>Email</span></p>
-    <p><a href="mailto:contact@gingerdesign.com.tw">contact@gingerdesign.com.tw</p>
+    <p><a href="mailto:contact@gingerdesign.com.tw">contact@gingerdesign.com.tw</a></p>
 </div>
+
+<div id="img-show"><img id="img-show-img" src=""></div>
 
 </div><!-- #page -->
 

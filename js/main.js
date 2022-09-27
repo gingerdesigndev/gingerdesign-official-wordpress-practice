@@ -96,6 +96,25 @@ $('.btn-nav-main').on('click', function() {
     $('body').toggleClass('open-nav-main');
 });
 
+$('.single-content').find('img').on('click', function(e) {
+    e.preventDefault();
+    showImg($(this));
+});
+
+$('.single-cover').find('img').on('click', function() {
+    showImg($(this));
+});
+
+$('#img-show').on('click', function() {
+    $('#img-show').removeClass('active');
+});
+
+function showImg($this) {
+    const src = $this.attr('src');
+    $('#img-show-img').attr('src', src);
+    $('#img-show').addClass('active');
+}
+
 function copyTextToClipboard(text) {
     if (!navigator.clipboard) {
         fallbackCopyTextToClipboard(text);

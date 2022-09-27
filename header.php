@@ -28,11 +28,16 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1054225351953895'); fbq('track', 'PageView'); </script>
+
+    <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1054225351953895'); fbq('track', 'PageView'); </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2150625846941263" crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
+    <?php $currentUrl = parse_url(home_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH) );?>
 </head>
 
 <body class="<?=$theme?> <?php if (is_home()) echo 'body-home'; ?>">
@@ -57,14 +62,14 @@
             </h1>
             <nav class="nav-main">
                 <ul>
-                    <li class="<?php if($pagename === '/category/projects') echo 'active'; ?>">
-                        <a href="/category/projects">成功案例</a>
+                    <li class="<?php if($currentUrl['path'] === '/projects/') echo 'active'; ?>">
+                        <a href="/projects">成功案例</a>
                     </li>
                     <li class="<?php if($pagename === 'service') echo 'active'; ?>">
                         <a href="/service">服務項目</a>
                     </li>
                     <li class="<?php if($pagename === 'blog') echo 'active'; ?>">
-                        <a href="/blog">部落格</a>
+                        <a href="/blog">知識專欄</a>
                     </li>
                     <li class="<?php if($pagename === 'about') echo 'active'; ?>">
                         <a href="/about">關於我們</a>

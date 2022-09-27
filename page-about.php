@@ -25,22 +25,22 @@ get_header();
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/ginger.png" alt="Ginger">
                     <h3>Ginger</h3>
-                    <h4>PM / UIUX Team</h4>
+                    <h4>Founder</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/dana.png" alt="Dana">
                     <h3>Dana</h3>
-                    <h4>Frontend Team</h4>
+                    <h4>Programmer</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/alvin.png" alt="Alvin">
                     <h3>Alvin</h3>
-                    <h4>Frontend Team</h4>
+                    <h4>Programmer</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/hanyu.png" alt="Hanyu">
                     <h3>Hanyu</h3>
-                    <h4>Visual Team</h4>
+                    <h4>Designer</h4>
                 </div>
             </div>
         </div>

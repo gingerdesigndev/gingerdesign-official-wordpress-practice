@@ -9,15 +9,6 @@
 
 <div class="box-list" id="<?=$category_slug?>">
     <div class="container">
-        <header class="header-category">
-            <h2>
-                <?=$category->description?>
-                <span><?=$category->name?></span>
-            </h2>
-            <a href="/<?=$category_slug?>" class="more">
-                <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/arrow-right.svg" alt="more">
-            </a>
-        </header>
         <div class="row gx-lg-5">
             <?php
                 $args = array( 'numberposts' => $num, 'category' => $category->cat_ID, 'post_status' => 'publish' );
