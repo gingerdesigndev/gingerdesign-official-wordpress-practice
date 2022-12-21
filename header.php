@@ -74,11 +74,19 @@
                     <li class="<?php if($pagename === 'about') echo 'active'; ?>">
                         <a href="/about">關於我們</a>
                     </li>
-                    <li class="<?php if($pagename === 'contact') echo 'active'; ?>">
+                    <li class="highlight <?php if($pagename === 'contact') echo 'active'; ?>">
                         <a href="/contact">聯絡我們</a>
+                    </li>
+                    <li>
+                        <div class="box-search">
+                            <?=get_search_form()?>
+                            <div class="btn-search"><span class="material-icons btn-search">search</span></div>
+                            <span class="material-icons btn-search-close">close</span>
+                        </div>
                     </li>
                 </ul>
             </nav>
+            
             <div class="btn-nav-main"><i></i><i></i><i></i></div>
         </div>
     </header>

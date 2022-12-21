@@ -96,6 +96,14 @@ $('.btn-nav-main').on('click', function() {
     $('body').toggleClass('open-nav-main');
 });
 
+$('.btn-search').on('click', function() {
+    $(this).closest('.box-search').addClass('open');
+    $('#search-form-1').focus();
+});
+$('.btn-search-close').on('click', function() {
+    $(this).closest('.box-search').removeClass('open');
+});
+
 $('.single-content').find('img').on('click', function(e) {
     e.preventDefault();
     showImg($(this));
