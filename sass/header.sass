@@ -217,7 +217,30 @@
 		right: 1rem
 		top: 50%
 		transform: translateY(-50%)
-		img
-			height: 24px
-			+md
-				height: 34px
+	svg
+		path
+			fill: $main 
+
+.header-page
+	.container
+		position: relative
+		a
+			position: absolute
+			right: 1rem
+			top: 50%
+			transform: translateY(-50%)
+	svg
+		path
+			fill: $main 
+
+.dark-theme
+	.header-category
+		h2
+			color: $gold-light
+		svg
+			path
+				fill: $gold-light
+	.header-page
+		svg
+			path
+				fill: $gold-light

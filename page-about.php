@@ -49,10 +49,6 @@ get_header();
         <div class="container">
             <h2 class="title-lg text-center">專案經驗</h2>
             <p class="box-sm">自己摸索架站會帶來樂趣，但與我們合作更有效益。相信我們，如果您是一家園藝商，將網路技術交給我們，您專注在植物、員工、您的事業，會是更好的作法。</p>
-            <ul class="about-works">
-                <li><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/work-1.png" alt=""></li>
-                <li><img src="<?= esc_url( get_template_directory_uri() ) ?>/img/work-2.png" alt=""></li>
-            </ul>
             <div class="text-center">
                 <a href="/contact" class="btn btn-gold">聯絡我們</a>
             </div>

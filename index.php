@@ -14,6 +14,10 @@
  * @since Ginger Design 1.0
  */
 
+$homeDataPage = get_page_by_path('home-data');
+$clientsImgDesktop = get_field('clients_img_desktop', $homeDataPage->ID);
+$clientsImgMobile = get_field('clients_img_mobile', $homeDataPage->ID);
+
 get_header();
 ?>
 
@@ -36,18 +40,44 @@ get_header();
     </div>
 </div>
 
-<div class="index-service">
+<div class="index-featured index-box">
+    <?php get_template_part('template-parts/post/list-process', 'featured', array( 'category_slug' => 'featured', 'num' => 4, 'more' => true )); ?>
+</div>
+
+<div class="index-service index-box">
     <div class="container">
-        <?=get_template_part( 'template-parts/content/content-service' );?>
+        <?php get_template_part('template-parts/content/content-service');?>
     </div>
 </div>
 
-<div class="index-projects">
+<div class="index-quality index-box">
+    <?php get_template_part('template-parts/post/list-process', 'quality', array( 'category_slug' => '野薑亮點', 'num' => 3, )); ?>
+</div>
+
+<div class="index-projects index-box">
     <?php get_template_part('template-parts/post/list-projects', 'projects', array( 'category_slug' => 'projects', 'num' => 2, )); ?>
 </div>
 
-<div class="index-process pb-5">
-    <?php get_template_part('template-parts/post/list', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
+<div class="index-process index-box pb-5">
+    <?php get_template_part('template-parts/post/list-process', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
+</div>
+
+<div class="index-box">
+    <header class="header-page">
+        <div class="container">
+            <h1>
+                Clients
+                <span>客戶品牌</span>
+            </h1>
+            <p>我們合作客戶，都是很棒的人，設計也為他們創造價值，歡迎加入我們！</p>
+        </div>
+    </header>
+    <div class="container">
+        <picture>
+            <source srcset="<?=$clientsImgDesktop?>" media="(min-width: 768px)">
+            <img src="<?=$clientsImgMobile?>" alt="Clients" class="w-100">
+        </picture>
+    </div>
 </div>
 
 </div>

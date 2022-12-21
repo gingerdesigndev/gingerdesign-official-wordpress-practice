@@ -63,7 +63,7 @@
             <nav class="nav-main">
                 <ul>
                     <li class="<?php if($currentUrl['path'] === '/projects/') echo 'active'; ?>">
-                        <a href="/projects">成功案例</a>
+                        <a href="/category/projects">成功案例</a>
                     </li>
                     <li class="<?php if($pagename === 'service') echo 'active'; ?>">
                         <a href="/service">服務項目</a>

@@ -3,6 +3,7 @@
     $category_slug = $args['category_slug'];
     $num = $args['num'];
     $category = get_category_by_slug($category_slug);
+    $categoryLink = get_category_link($category->term_id);
     $postItemClass = 'col-12 col-lg-6';
     if ($num === 3 || $num === 6) $postItemClass = 'col-12 col-lg-4';
 ?>
@@ -14,8 +15,8 @@
                 <?=$category->description?>
                 <span><?=$category->name?></span>
             </h2>
-            <a href="/<?=$category_slug?>" class="more">
-                <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/arrow-right.svg" alt="more">
+            <a href="<?=$categoryLink?>" class="more">
+                <?php get_template_part('template-parts/svg/arrow-right');?>
             </a>
         </header>
         <div class="row gx-lg-5">
