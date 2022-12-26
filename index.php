@@ -62,6 +62,7 @@ get_header();
     <?php get_template_part('template-parts/post/list-process', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
 </div>
 
+<?php if ($clientsImgMobile): ?>
 <div class="index-box">
     <header class="header-page">
         <div class="container">
@@ -79,6 +80,7 @@ get_header();
         </picture>
     </div>
 </div>
+<?php endif; ?>
 
 </div>
 <?php
