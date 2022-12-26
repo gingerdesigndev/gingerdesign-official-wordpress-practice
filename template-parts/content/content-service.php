@@ -22,7 +22,7 @@ usort($terms, fn($a, $b) => get_field('cat_order', $b) - get_field('cat_order', 
         $order = get_field('cat_order', $cat);
     ?>
     <li class="col-12 col-lg-6 col-xxl-3">
-        <a href="/<?=$cat->slug?>">
+        <a href="<?=get_category_link($cat->term_id)?>">
             <img src="<?=$img['url']?>" alt="<?=$cat->name?>">
             <div class="text-center mb-3">
                 <button type="button" class="btn btn-gold btn-gold-sm">了解詳情</button>
