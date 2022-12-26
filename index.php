@@ -50,8 +50,8 @@ get_header();
     </div>
 </div>
 
-<div class="index-quality index-box">
-    <?php get_template_part('template-parts/post/list-process', 'quality', array( 'category_slug' => '野薑亮點', 'num' => 3, )); ?>
+<div class="index-highlights index-box">
+    <?php get_template_part('template-parts/post/list-process', 'highlights', array( 'category_slug' => 'highlights', 'num' => 3, )); ?>
 </div>
 
 <div class="index-projects index-box">
