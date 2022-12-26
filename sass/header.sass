@@ -251,6 +251,14 @@
 		svg
 			path
 				fill: $gold-light
+	.box-search
+		+llg
+			background-color: $main-dark
+			input
+				border: 0
+		+lg
+			.btn-search
+				color: #fff
 
 .box-search
 	label, .search-submit
@@ -258,7 +266,7 @@
 	input
 		top: 50%
 		background-color: #fff
-		border: 1.5px solid $main
+		border: 1.5px solid $main-light
 		padding: 6px 24px
 		color: $main
 		border-radius: 100px
@@ -283,7 +291,7 @@
 			left: 50%
 			top: 50%
 			transform: translate(-50%, -50%)
-			color: $main
+			color: #fff
 	+lg
 		margin-left: 2rem
 		position: absolute
@@ -320,6 +328,7 @@
 			cursor: pointer
 			color: $main
 		.btn-search
+			color: $main
 			span
 				position: relative
 				top: 4px
@@ -329,4 +338,5 @@
 			right: 0
 			top: 50%
 			transform: translateY(-50%)
+			color: $main
 
