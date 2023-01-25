@@ -15,9 +15,9 @@
  */
 
 $homeDataPage = get_page_by_path('home-data');
+$feedback = get_field('feedback', $homeDataPage->ID);
 $clientsImgDesktop = get_field('clients_img_desktop', $homeDataPage->ID);
 $clientsImgMobile = get_field('clients_img_mobile', $homeDataPage->ID);
-
 get_header();
 ?>
 
@@ -61,6 +61,31 @@ get_header();
 <div class="index-process index-box pb-5">
     <?php get_template_part('template-parts/post/list-process', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
 </div>
+
+<?php if (count($feedback)): ?>
+<div class="index-box">
+    <header class="header-page">
+        <div class="container">
+            <h1>
+                Feedback
+                <span>客戶回饋</span>
+            </h1>
+            <p>從小型登陸頁到大型正式網站，<br>野薑致力於提供高品質設計給您。</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <?php foreach($feedback as $feed): ?>
+            <div class="col-12 col-lg-4">
+                <a href="<?=$feed['link']?>">
+                    <img src="<?=$feed['img']?>" alt="" class="w-100">
+                </a>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 
 <?php if ($clientsImgMobile): ?>
 <div class="index-box">

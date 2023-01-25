@@ -201,7 +201,8 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 
-		$editor_stylesheet_path = './assets/css/style-editor.css';
+		// $editor_stylesheet_path = './assets/css/style-editor.css';
+		$editor_stylesheet_path = './style.css';
 
 		// Note, the is_IE global variable is defined by WordPress and is used
 		// to detect if the current browser is internet explorer.
@@ -537,13 +538,29 @@ function twenty_twenty_one_scripts() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
+// add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
+add_action( 'wp_enqueue_scripts', 'load_admin_style' );
+function load_admin_style() {
+	wp_register_style( 'admin_css', get_template_directory_uri() . '/style.css', false, '1.0.0' );
+    // wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/style.css', false, '1.0.0' );
+}
+
+// add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+    body, td, textarea, input, select {
+      font-family: "Lucida Grande";
+      font-size: 12px;
+    } 
+  </style>';
+}
 
 /**
  * Enqueue block editor script.
  *
  * @since Twenty Twenty-One 1.0
- *
+
  * @return void
  */
 function twentytwentyone_block_editor_script() {

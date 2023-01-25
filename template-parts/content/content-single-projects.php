@@ -43,7 +43,7 @@
                 <li>
                     <a href="#" class="copy-link">
                         <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/share-link.svg" alt="share link">
-                        <span class="material-icons-outlined">done</span>
+                        <span class="material-icons">check_circle</span>
                     </a>
                 </li>
             </ul>
