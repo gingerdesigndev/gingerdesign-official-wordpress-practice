@@ -19,6 +19,7 @@ $feedback = get_field('feedback', $homeDataPage->ID);
 $clientsImgDesktop = get_field('clients_img_desktop', $homeDataPage->ID);
 $clientsImgMobile = get_field('clients_img_mobile', $homeDataPage->ID);
 get_header();
+var_dump($feedback);
 ?>
 
 <div class="index-wrap">
@@ -62,7 +63,7 @@ get_header();
         <?php get_template_part('template-parts/post/list-process', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
     </div>
 
-    <?php if ($feedback[0]['img']): ?>
+    <?php if ($feedback['one']['img']): ?>
     <div class="index-box">
         <header class="header-page">
             <div class="container">
