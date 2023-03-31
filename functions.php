@@ -1,4 +1,50 @@
 <?php
+// remove admin bar
+add_filter('show_admin_bar', '__return_false');
+
+// remove wp_head
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'start_post_rel_link');
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'parent_post_rel_link');
+remove_action('wp_head', 'adjacent_posts_rel_link');
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+// remove emoji
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('admin_print_styles', 'print_emoji_styles');
+
+// 移除 head dns-prefetch
+remove_action( 'wp_head', 'wp_resource_hints', 2);
+
+function my_theme_setup(){
+    add_theme_support('post-thumbnails');
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'my_theme_setup');
+
+function remove_useless_source() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('classic-theme-styles');
+    wp_dequeue_style('global-styles');
+	wp_deregister_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'remove_useless_source', 100);
+
+add_theme_support('editor-styles');
+$editor_stylesheet_path = './style.css';
+add_editor_style($editor_stylesheet_path);
+
 function get_default_image() {
     $num = rand(1,3);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
@@ -107,14 +153,14 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		load_theme_textdomain( 'twentytwentyone', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		// add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
 		 * This theme does not use a hard-coded <title> tag in the document head,
 		 * WordPress will provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		// add_theme_support( 'title-tag' );
 
 		/**
 		 * Add post-formats support.
@@ -139,15 +185,15 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		// add_theme_support( 'post-thumbnails' );
+		// set_post_thumbnail_size( 1568, 9999 );
 
-		register_nav_menus(
-			array(
-				'primary' => esc_html__( 'Primary menu', 'twentytwentyone' ),
-				'footer'  => esc_html__( 'Secondary menu', 'twentytwentyone' ),
-			)
-		);
+		// register_nav_menus(
+		// 	array(
+		// 		'primary' => esc_html__( 'Primary menu', 'twentytwentyone' ),
+		// 		'footer'  => esc_html__( 'Secondary menu', 'twentytwentyone' ),
+		// 	)
+		// );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -212,7 +258,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		}
 
 		// Enqueue editor styles.
-		add_editor_style( $editor_stylesheet_path );
+		// add_editor_style( $editor_stylesheet_path );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -415,7 +461,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		add_filter( 'rss_widget_feed_link', '__return_false' );
 	}
 }
-add_action( 'after_setup_theme', 'twenty_twenty_one_setup' );
+// add_action( 'after_setup_theme', 'twenty_twenty_one_setup' );
 
 /**
  * Register widget area.
