@@ -51,6 +51,14 @@ function mytheme_custom_excerpt_length( $length ) {
 add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
 remove_filter('excerpt_more', 'new_excerpt_more');
 
+function prefix_filter_canonical_example( $canonical ) {
+	if ( is_home() ) {
+	  	$canonical = 'https://gingerdesign.com.tw/';
+	}
+	return $canonical;
+}
+add_filter( 'wpseo_canonical', 'prefix_filter_canonical_example' );
+
 function get_default_image() {
     $num = rand(1,3);
     return esc_url( get_template_directory_uri()). '/img/default-'.$num.'.svg';
