@@ -3,7 +3,7 @@
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?> <?php twentytwentyone_the_html_classes(); ?>>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="<?= esc_url( get_template_directory_uri() ) ?>/style.css?20230125" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2150625846941263" crossorigin="anonymous"></script>
-	<?php if (!is_home()) wp_head(); ?>
+	<?php wp_head(); ?>
     <?php $currentUrl = parse_url(home_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH) );?>
 </head>
 
