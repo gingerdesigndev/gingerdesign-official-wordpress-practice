@@ -42,11 +42,8 @@
 </head>
 
 <body class="<?=$theme?> <?php if (is_home()) echo 'body-home'; ?>">
-<!-- <?php wp_body_open(); ?> -->
 
-<?php if (is_home()): ?>
-    <?=get_template_part( 'template-parts/content/index-animation' );?>
-<?php endif; ?>
+
 <div id="page" class="site <?php if (is_home()) echo 'home'; ?>">
     <header class="header-main">
         <div class="container">
