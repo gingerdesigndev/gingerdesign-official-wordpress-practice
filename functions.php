@@ -51,13 +51,13 @@ function mytheme_custom_excerpt_length( $length ) {
 add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
 remove_filter('excerpt_more', 'new_excerpt_more');
 
-function prefix_filter_canonical_example( $canonical ) {
-	if ( is_home() ) {
-	  	$canonical = 'https://gingerdesign.com.tw/';
-	}
-	return $canonical;
+add_action('template_redirect','remove_wpseo');
+function remove_wpseo() {
+    if ( is_home() ) {
+        $front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
+        remove_action( 'wpseo_head', [ $front_end, 'present_head' ], -9999 );
+    }
 }
-add_filter( 'wpseo_canonical', 'prefix_filter_canonical_example' );
 
 function get_default_image() {
     $num = rand(1,3);
