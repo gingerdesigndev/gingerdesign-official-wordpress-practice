@@ -51,7 +51,7 @@ function mytheme_custom_excerpt_length( $length ) {
 add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
 remove_filter('excerpt_more', 'new_excerpt_more');
 
-add_action('template_redirect','remove_wpseo');
+// add_action('template_redirect','remove_wpseo');
 function remove_wpseo() {
     if ( is_home() ) {
         $front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
