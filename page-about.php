@@ -38,9 +38,9 @@ get_header();
                     <h4>Programmer</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/hanyu.png" alt="Hanyu">
-                    <h3>Hanyu</h3>
-                    <h4>Designer</h4>
+                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/elsa.png" alt="Elsa">
+                    <h3>Elsa</h3>
+                    <h4>Project Manager</h4>
                 </div>
             </div>
         </div>

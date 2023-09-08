@@ -47,6 +47,7 @@
 <?php endif; ?>
 
 <div id="page" class="site <?php if (is_home()) echo 'home'; ?>">
+    <?php if (!$args['isBlankPage']): ?>
     <header class="header-main">
         <div class="container">
             <h1>
@@ -90,4 +91,5 @@
             <div class="btn-nav-main"><i></i><i></i><i></i></div>
         </div>
     </header>
+    <?php endif; ?>
 	<main class="main-main">
