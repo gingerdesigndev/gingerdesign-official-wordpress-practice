@@ -25,7 +25,7 @@ get_header();
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/ginger.png" alt="Ginger">
                     <h3>Ginger</h3>
-                    <h4>Founder</h4>
+                    <h4>Founder / Designer</h4>
                 </div>
                 <div class="col-12 col-lg-3 mb-4">
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/dana.png" alt="Dana">
