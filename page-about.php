@@ -1,4 +1,8 @@
 <?php
+$aboutPage = get_page_by_path('about');
+$title = get_field('title', $aboutPage->ID);
+$desc = get_field('desc', $aboutPage->ID);
+$team = get_field('team', $aboutPage->ID);
 get_header();
 ?>
 
@@ -8,10 +12,10 @@ get_header();
             <div class="box-sm">
                 <h1>Hello，我們是野薑設計</h1>
                 <div class="about-quote">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/quote.svg" alt=""">
-                    <p>網路世界變化快速，您需要數位導遊<br>The digital world is moving fast,<br>hiring a tour guide for your business.</p>
+                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/quote.svg" alt="">
+                    <div class="title"><pre><?=$title?></pre></div>
                 </div>
-                <p class="mb-xl">野薑設計專注客製化數位設計服務。提供網路知識顧問、用戶研究、網站設計UI/UX、網站架設開發、技術評估及原型打造。我們謹慎評估您的需求，並提供適切建議及簡單易懂的技術說明。客製設計有利傳遞您的產品服務價值，提高顧客信任，適合需要高品質設計的您。</p>
+                <div class="desc"><pre><?=$desc?></pre></div>
                 <div class="text-center">
                     <a href="/contact" class="btn btn-gold">聯絡我們</a>
                 </div>
@@ -22,26 +26,13 @@ get_header();
         <div class="container">
             <h2 class="title-lg text-center">專業團隊</h2>
             <div class="row gx-5 list-team">
+                <?php foreach($team as $p): ?>
                 <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/ginger.png" alt="Ginger">
-                    <h3>Ginger</h3>
-                    <h4>Founder / Designer</h4>
+                    <img src="<?=$p['img']['sizes']['thumbnail']?>" alt="<?=$p['name']?>">
+                    <h3><?=$p['name']?></h3>
+                    <h4><?=$p['job']?></h4>
                 </div>
-                <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/dana.png" alt="Dana">
-                    <h3>Dana</h3>
-                    <h4>Programmer</h4>
-                </div>
-                <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/alvin.png" alt="Alvin">
-                    <h3>Alvin</h3>
-                    <h4>Programmer</h4>
-                </div>
-                <div class="col-12 col-lg-3 mb-4">
-                    <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/elsa.png" alt="Elsa">
-                    <h3>Elsa</h3>
-                    <h4>Project Manager</h4>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -36,6 +36,11 @@
 				height: 48px
 
 .nav-main
+	li.lang
+		padding: 5px 0
+		text-align: center
+		a, span
+			color: #fff !important
 	+llg
 		position: absolute
 		top: 60px
@@ -47,11 +52,11 @@
 		overflow: hidden
 		transition: .4s
 		box-shadow: 0 4px 8px rgba(0, 0, 0, .2)
-		ul
+		> ul
 			list-style: none
 			margin: 0
 			padding: 0
-			li
+			> li
 				border-bottom: 1px solid $border
 				a
 					text-decoration: none
@@ -63,6 +68,7 @@
 		ul
 			list-style: none
 			display: flex
+			align-items: center
 			margin: 0
 			padding: 0
 			li
@@ -119,9 +125,10 @@
 .dark-theme
 	.nav-main
 		+llg
-			ul
-				li
-					a
+			> ul
+				> li
+					background-color: $main-dark
+					> a
 						color: #fff
 						background-color: $main-dark
 		+lg

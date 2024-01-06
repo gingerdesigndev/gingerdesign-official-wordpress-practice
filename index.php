@@ -1,7 +1,8 @@
 <?php
-
 $homeDataPage = get_page_by_path('home-data');
-$feedback = get_field('feedback', $homeDataPage->ID);
+$feedbacks = get_field('feedbacks', $homeDataPage->ID);
+$title = get_field('title', $homeDataPage->ID);
+$desc = get_field('desc', $homeDataPage->ID);
 $clientsImgDesktop = get_field('clients_img_desktop', $homeDataPage->ID);
 $clientsImgMobile = get_field('clients_img_mobile', $homeDataPage->ID);
 get_header();
@@ -15,12 +16,8 @@ get_header();
                     <img src="<?= esc_url( get_template_directory_uri() ) ?>/img/index-welcome.svg" alt="歡迎來到野薑設計工作室">
                 </div>
                 <div class="col-12 col-lg-7 order-lg-1">
-                    <h2>您好，<br>
-                    歡迎來到野薑設計工作室<br>
-                    Hello,<br>
-                    Welcome to<br>
-                    Ginger Design</h2>
-                    <p>野薑設計提供一流的設計合作體驗，網路知識顧問、需求研究、網站設計、架設開發、技術評估。我們擅長提供精細服務，提供適切的開發建議，簡單易懂的技術說明，創造良善的專案體驗，協助您在網路世界中建立屬於自己的家，與野薑合作，悠遊於數位世界。</p>
+                    <h2><pre><?=$title?></pre></h2>
+                    <div class="desc"><pre><?=$desc?></pre></div>
                 </div>
             </div>
         </div>
@@ -48,23 +45,20 @@ get_header();
         <?php get_template_part('template-parts/post/list-process', 'process', array( 'category_slug' => 'process', 'num' => 6, )); ?>
     </div>
 
-    <?php if ($feedback['one']['img']): ?>
+    <?php if ($feedbacks): ?>
     <div class="index-box">
         <header class="header-page">
             <div class="container">
-                <h1>
-                    Feedback
-                    <span>客戶回饋</span>
-                </h1>
+                <h1>Feedback<span>客戶回饋</span></h1>
                 <p>從小型登陸頁到大型正式網站，<br>野薑致力於提供高品質設計給您。</p>
             </div>
         </header>
         <div class="container">
-            <div class="row">
-                <?php foreach($feedback as $feed): ?>
+            <div class="row gy-4">
+                <?php foreach($feedbacks as $feed): ?>
                 <div class="col-12 col-lg-4">
                     <a href="<?=$feed['link']?>">
-                        <img src="<?=$feed['img']?>" alt="" class="w-100">
+                        <img src="<?=$feed['img']['url']?>" alt="" class="w-100">
                     </a>
                 </div>
                 <?php endforeach; ?>

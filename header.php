@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="<?= esc_url( get_template_directory_uri() ) ?>/style.css?20230908" />
+    <link rel="stylesheet" href="<?= esc_url( get_template_directory_uri() ) ?>/style.css?20240106" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2150625846941263" crossorigin="anonymous"></script>
     <?php $currentUrl = parse_url(home_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH) );?>
 </head>
@@ -75,6 +75,7 @@
                     <li class="<?php if($pagename === 'about') echo 'active'; ?>">
                         <a href="/about">關於我們</a>
                     </li>
+                    <li class="lang"><div id="weglot_here"></div></li>
                     <li class="highlight <?php if($pagename === 'contact') echo 'active'; ?>">
                         <a href="/contact">聯絡我們</a>
                     </li>
