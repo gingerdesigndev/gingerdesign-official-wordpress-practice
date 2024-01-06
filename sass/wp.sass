@@ -38,8 +38,27 @@
     border: 0
 
 .page-blank
-    text-align: center
     .container
         max-width: 920px
     img
         max-width: 100%
+
+.wp-block-columns
+    gap: 2rem
+
+.wp-block-buttons
+    display: flex
+    justify-content: center
+    margin: 1rem 0
+    gap: 1rem
+.wp-element-button
+    border: 1px solid $main
+    color: $main !important
+    background-color: #fff
+    padding: 12px 24px
+    border-radius: 4px
+    &:hover
+        color: $main
+
+.wp-block-buttons.is-content-justification-center
+    justify-content: center !important

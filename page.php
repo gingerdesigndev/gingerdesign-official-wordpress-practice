@@ -6,7 +6,7 @@
 <div class="page <?php if ($isBlankPage) echo 'page-blank'; ?>">
 	<div class="container">
 		<h1><?=get_the_title();?></h1>
-		<?=get_the_content();?>
+		<div class="single-content"><?=get_the_content();?></div>
 	</div>
 </div>
 
