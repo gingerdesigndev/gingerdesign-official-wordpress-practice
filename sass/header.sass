@@ -40,7 +40,7 @@
 		padding: 5px 0
 		text-align: center
 		a, span
-			color: #fff !important
+			color: $main !important
 	+llg
 		position: absolute
 		top: 60px
@@ -124,6 +124,9 @@
 
 .dark-theme
 	.nav-main
+		li.lang
+			a, span
+				color: #fff !important
 		+llg
 			> ul
 				> li
@@ -132,12 +135,12 @@
 						color: #fff
 						background-color: $main-dark
 		+lg
-			ul
-				li
+			> ul
+				> li
 					&:last-child
-						a
+						> a
 							color: $gray-dark
-					a
+					> a
 						color: #fff
 	.btn-nav-main
 		i
