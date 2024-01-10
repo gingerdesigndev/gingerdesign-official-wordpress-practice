@@ -17,3 +17,62 @@
     padding: 12px 24px
     &:hover
         color: $major
+
+#btns-fixed
+    position: fixed
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    +md
+        right: 2rem
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        border-top: 1px solid $main
+        border-left: 1px solid $main
+        border-right: 1px solid $main
+        border-radius: 2px
+        li
+            border-bottom: 1px solid $main
+            a
+                display: block
+                line-height: 1
+                width: 40px
+                height: 40px
+                display: flex
+                justify-content: center
+                align-items: center
+                text-decoration: none
+                background-color: #fff
+            svg
+                width: 24px
+                path
+                    fill: $main
+                &.line-simple
+                        path
+                            fill: #fff
+                            &.bg
+                                fill: $main
+            span
+                font-size: 20px
+                color: $main
+
+.dark-theme
+    #btns-fixed
+        ul
+            border-top: 1px solid $gold-light
+            li
+                border: 1px solid $gold-light
+                a
+                    background-color: $main-ultra-dark
+                svg
+                    path
+                        fill: $gold-light
+                    &.line-simple
+                        path
+                            fill: $main-ultra-dark
+                            &.bg
+                                fill: $gold-light
+                span
+                    color: $gold-light
