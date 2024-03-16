@@ -157,3 +157,28 @@ function fallbackCopyTextToClipboard(text) {
     }
     document.body.removeChild(textArea);
 }
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", function(){
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
+        $('body').addClass('down').removeClass('up');
+        resetIdleTimer();
+    } else if (st < lastScrollTop) {
+        $('body').addClass('up').removeClass('down');
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+}, false);
+
+let idleTimer;
+function resetIdleTimer() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(showSiteNotice, 3000); // 3 seconds
+}
+function showSiteNotice() {
+    $('body').addClass('up').removeClass('down');
+}
+document.addEventListener('mousemove', function() {
+    resetIdleTimer();
+});
+resetIdleTimer();

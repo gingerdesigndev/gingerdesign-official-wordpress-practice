@@ -87,6 +87,24 @@ get_header();
     </div>
     <?php endif; ?>
 
+    <div class="index-box">
+        <header class="header-page mb-0">
+            <div class="container">
+                <h1>
+                    You
+                    <span>有興趣嗎？為你事業打造一個家吧！</span>
+                </h1>
+                <p>打造事業的家，需要一份藍圖，我們已經為您準備好了，填寫 Email 領取您網站藍圖吧！</p>
+            </div>
+        </header>
+        <?php get_template_part('template-parts/content/subscribe');?>
+        <div class="container">
+            <h3 class="title-sm mb-3">你已經準備好打造美好的家嗎？立即和我們聯絡！</h3>
+            <a href="/contact" class="btn btn-gold btn-gold-normal">填寫需求單</a>
+            <span class="ms-3 gold-light"><?php get_template_part('template-parts/svg/arrow-right');?></span>
+        </div>
+    </div>
+
 </div><!-- .index-wrap -->
 <?php
 get_footer();

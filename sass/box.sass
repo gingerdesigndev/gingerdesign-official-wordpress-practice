@@ -69,3 +69,48 @@
 		font-size: 18px
 		line-height: 1.85
 		word-break: break-all
+
+.box-subscribe
+	padding: 3rem 0 5rem
+	form
+		input
+			border: 1px solid $gold-light
+			background-color: $main-ultra-dark
+			height: 40px
+			border-radius: 5px
+			padding: 0 16px
+			color: #fff
+
+	.input-wrap
+		display: flex
+		align-items: flex-end
+		flex-wrap: wrap
+		gap: 1rem
+		> div
+			position: relative
+			width: 100%
+			min-width: 100%
+			+md
+				width: auto
+				min-width: auto
+			label
+				font-size: 14px
+				display: block
+			span
+				font-size: 12px
+				display: block
+				+md
+					position: absolute
+					bottom: -28px
+					left: 0
+					
+	.content
+		display: none
+		&.active
+			display: block
+	.result
+		padding: 1rem 0
+		h3
+			margin: 0
+		button
+			margin-top: 1rem

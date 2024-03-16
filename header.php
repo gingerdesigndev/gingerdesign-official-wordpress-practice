@@ -1,5 +1,6 @@
 <?php
     $theme = theme();
+    $site_notice = get_field('site_notice', 'option');
 ?>
 
 <!doctype html>
@@ -89,6 +90,11 @@
             
             <div class="btn-nav-main"><i></i><i></i><i></i></div>
         </div>
+        <?php if($site_notice['text']): ?>
+        <div class="site-notice">
+            <a href="<?=$site_notice['link']?>" target="_blank"><?=$site_notice['text']?></a>
+        </div>
+        <?php endif; ?>
     </header>
     <?php endif; ?>
 	<main class="main-main">
