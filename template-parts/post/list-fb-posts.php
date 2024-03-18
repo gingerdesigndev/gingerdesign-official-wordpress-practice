@@ -2,6 +2,7 @@
     $fbPosts = json_decode(getFBPosts(4, 0))->data;
 ?>
 
+<?php if ($fbPosts): ?>
 <div class="box-list" id="news">
     <div class="container">
         <header class="header-category">
@@ -27,3 +28,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
