@@ -52,11 +52,13 @@
                 <div class="mb-3">
                     <img src="<?=$fbPost->full_picture?>" class="w-100">
                 </div>
+                <?php if ($fbPost->message_tags):?>
                 <ul class="list-tags">
                     <?php foreach($fbPost->message_tags as $tag): ?>
                     <li><?=$tag->name?></li>
                     <?php endforeach; ?>
                 </ul>
+                <?php endif; ?>
                 <p class="news-message"><?=$fbPost->message?></p>
                 <div class="text-center">
                     <ul class="list-shares my-5">
