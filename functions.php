@@ -84,7 +84,7 @@ function theme() {  // add class to <body> tag
 }
 
 function getFBPosts($limit, $offset) {
-    $token = 'EAAOu6CbZCrnIBO5HHxOtdD5LBpU5NuFp2hMW2e15PGR8gJIoAgzZBxjuykbZB8M9a21uLcZAnqV44iZATTZCsYjreySZBspMlbrVJ9FdJSpOjmZAScQDPyB9IRE3zZAMvYOTBhS10BeZAkKQLMLcJsHsoeMO8H0MCPQx4OXOF4oBpqwu6ZBviaf5Ln5ljYLjEX5KruiJgZDZD';
+    $token = 'EAAOu6CbZCrnIBO8HXLv07MPjPKqphH3UztA3N8Buv0zO1QHi4qBXdvQUxZAyX6EXZCFoDgL3o7jNm3DDRTdTuxgjVvag21DX6J5V2cmszQRP8bWAJo6WGa4DVYh1aqZA7RacFfhFJLJ2qvnxEFZClLJh6CAanoNG2pAvv9sqz3d2UydqQ94ECTvWZBOs8uZCmgZD';
     $apiUrl = "https://graph.facebook.com/me/published_posts?access_token={$token}&offset={$offset}&limit={$limit}&fields=shares,message_tags,id,full_picture,created_time,message,comments.summary(true),likes.summary(true)";
     $response = wp_remote_get($apiUrl);
     $body = wp_remote_retrieve_body( $response );
@@ -92,7 +92,7 @@ function getFBPosts($limit, $offset) {
 }
 
 function getFBPost($id) {
-    $token = 'EAAOu6CbZCrnIBO5HHxOtdD5LBpU5NuFp2hMW2e15PGR8gJIoAgzZBxjuykbZB8M9a21uLcZAnqV44iZATTZCsYjreySZBspMlbrVJ9FdJSpOjmZAScQDPyB9IRE3zZAMvYOTBhS10BeZAkKQLMLcJsHsoeMO8H0MCPQx4OXOF4oBpqwu6ZBviaf5Ln5ljYLjEX5KruiJgZDZD';
+    $token = 'EAAOu6CbZCrnIBO8HXLv07MPjPKqphH3UztA3N8Buv0zO1QHi4qBXdvQUxZAyX6EXZCFoDgL3o7jNm3DDRTdTuxgjVvag21DX6J5V2cmszQRP8bWAJo6WGa4DVYh1aqZA7RacFfhFJLJ2qvnxEFZClLJh6CAanoNG2pAvv9sqz3d2UydqQ94ECTvWZBOs8uZCmgZD';
     $apiUrl = "https://graph.facebook.com/{$id}?access_token={$token}&fields=shares,message_tags,id,full_picture,created_time,message,comments.summary(true),likes.summary(true)";
     $response = wp_remote_get($apiUrl);
     $body = wp_remote_retrieve_body( $response );
