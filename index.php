@@ -87,7 +87,7 @@ get_header();
     </div>
     <?php endif; ?>
 
-    <div class="index-box">
+    <div class="index-box" id="homeedm">
         <header class="header-page mb-0">
             <div class="container">
                 <h1>
