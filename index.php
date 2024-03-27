@@ -106,5 +106,12 @@ get_header();
     </div>
 
 </div><!-- .index-wrap -->
+
+<script>
+_lt('send', 'cv', {
+  type: 'Conversion'
+},['299420f4-b7ee-4f96-b243-c4fa8c70f23f']);
+</script>
+
 <?php
 get_footer();

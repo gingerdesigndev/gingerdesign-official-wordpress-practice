@@ -81,6 +81,9 @@ var nl_1554802646254 = (function subIIFE() {
                 }, n.onreadystatechange = function() {
                     this.readyState === XMLHttpRequest.DONE && (this.status >= 200 && this.status < 300 ? (o(), a()) : (c(this.status), a()));
                 }, n.open('POST', r.target, !0), n.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'), n.send(r.form);
+                // LINE event
+                _lt('send', 'cv', { type: 'EDM' },['299420f4-b7ee-4f96-b243-c4fa8c70f23f']);
+                // LINE event
             } catch (e) {
             }
             return !1;

@@ -29,7 +29,29 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '324985609853828'); fbq('track', 'PageView'); </script>
+    <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1386137638735275'); fbq('track', 'PageView'); </script>
+
+    <!-- LINE Tag Base Code -->
+    <!-- Do Not Modify -->
+    <script>
+        (function(g,d,o){
+        g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+        var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+        var s=d.createElement('script');s.async=1;
+        s.src=o||h+'/n/line_tag/public/release/v1/lt.js';
+        var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+            })(window, document);
+        _lt('init', {
+        customerType: 'lap',
+        tagId: '299420f4-b7ee-4f96-b243-c4fa8c70f23f'
+        });
+        _lt('send', 'pv', ['299420f4-b7ee-4f96-b243-c4fa8c70f23f']);
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://tr.line.me/tag.gif?c_t=lap&t_id=299420f4-b7ee-4f96-b243-c4fa8c70f23f&e=pv&noscript=1" />
+    </noscript>
+    <!-- End LINE Tag Base Code -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
