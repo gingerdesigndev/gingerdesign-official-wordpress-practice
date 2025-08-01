@@ -56,12 +56,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="<?= esc_url( get_template_directory_uri() ) ?>/style.css?20240412" />
+    <link rel="stylesheet" href="<?= esc_url( get_template_directory_uri() ) ?>/style.css?20250801" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2150625846941263" crossorigin="anonymous"></script>
     <?php $currentUrl = parse_url(home_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH) );?>
 </head>
 
-<body class="<?=$theme?> <?php if (is_home()) echo 'body-home'; ?>">
+<body class="<?=$theme?> <?php if (is_home()) echo 'body-home'; if($site_notice['text']) echo 'has-site-notice' ?>">
 
 <?php if (is_home()): ?>
     <?=get_template_part( 'template-parts/content/index-animation' );?>
